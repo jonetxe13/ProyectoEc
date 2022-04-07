@@ -26,11 +26,16 @@ int TeclaPulsada()
 	//definiciones.h:  A=0;B=1;SELECT=2;START=3;IZQUIERDA=4;DERECHA=5;
 	//ARRIBA=6;ABAJO=7;R=8;L=9;
 	if(TeclaDetectada()) {
-		//if(TECLAS_DAT == 1022){
 		if(TECLAS_DAT % 2 == 0){
-			return A;
+			tecla = A;
 		}
-		else return 10;
+		if(TECLAS_DAT == 1018){
+			tecla = B;
+		}
+		if(TECLAS_DAT % 8 == 1010){
+			tecla = SELECT;
+		}
+		return tecla;
 	}
 }
 
