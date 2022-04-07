@@ -16,7 +16,6 @@ int TeclaDetectada()
 	//Devuelve TRUE si detecta que se ha pulsado alguna tecla.
 	if ((~TECLAS_DAT & 0x03ff)!=0) return 1;
 	else return 0;
-
 }
 
 int TeclaPulsada() 
@@ -29,11 +28,26 @@ int TeclaPulsada()
 		if(TECLAS_DAT % 2 == 0){
 			tecla = A;
 		}
-		if(TECLAS_DAT == 1018){
+		else if(TECLAS_DAT == 1021){
 			tecla = B;
 		}
-		if(TECLAS_DAT % 8 == 1010){
+		else if(TECLAS_DAT == 1019){
 			tecla = SELECT;
+		}
+		else if(TECLAS_DAT == 1015){
+			tecla = START;
+		}
+		else if(TECLAS_DAT == 1007){
+			tecla = IZQUIERDA;
+		}
+		else if(TECLAS_DAT == 991){
+			tecla = DERECHA;
+		}
+		else if(TECLAS_DAT == 959){
+			tecla = ARRIBA;
+		}
+		else if(TECLAS_DAT == 895){
+			tecla = ABAJO;
 		}
 		return tecla;
 	}

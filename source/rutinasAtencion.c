@@ -15,15 +15,14 @@ int seg3;
 void RutAtencionTeclado ()
 {
 if (ESTADO == CERRADA)
-{	
-	if (TeclaPulsada()==SELECT)
-	{
+{		
+	if(TeclaPulsada()==START){
 		ESTADO=ABIERTA;
 		visualizarPuertaAbierta();
 		seg3=0;
 		MostrarRombo(1, 5, 5);
 		MostrarRomboGrande(2, 100, 100);
-	}
+	}	
 }
 }
 

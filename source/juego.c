@@ -41,22 +41,34 @@ void juego()
 	// Habilitar las interrupciones del temporizador.
 	// Establecer las rutinas de atención a interrupciones
 	//******************************************************************************//
-
-	
-
-
 	while(1)
 	{	
-		
       /*******************************EN LA 1.ACTIVIDAD*****************************************/
 		/*Si el estado es ESPERA: codificar aquí la encuesta del teclado, sacar por pantalla la tecla que se ha pulsado, y si se pulsa ta la tecla START cambiar de estado*/
 		if(ESTADO == ESPERA){
-			iprintf("\x1b[13;5HSegundos que han pasado=%d", TeclaPulsada());
-			//if(TeclaPulsada() == SELECT ){
-			//		ESTADO = CERRADA;
+			iprintf("\x1b[1;1HLa tecla que se ha pulsado es. Valor=%d",TeclaPulsada());
+			if(TeclaPulsada()==START){
+				ESTADO = CERRADA;
+				visualizarPuerta();
 			}
 		}
+		else if(ESTADO==CERRADA){
+			if(TeclaPulsada()==A){
+				ESTADO=ABIERTA;
+				visualizarPuertaAbierta();
+				MostrarRombo();
+				MostrarRomboGrande();
+			}
+		}
+		else{
+			if(tiempo == 3){
+				ESTADO=CERRADA;
+				visualizarPuerta();
+				tiempo = 0;
+				BorrarRombo();
+				BorrarRomboGrande();
+			}
 
-
-
+		}
+	}
 }
