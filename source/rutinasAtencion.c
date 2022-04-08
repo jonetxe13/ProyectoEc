@@ -16,13 +16,16 @@ void RutAtencionTeclado ()
 {
 if (ESTADO == CERRADA)
 {		
-	if(TeclaPulsada()==START){
+	if(TeclaPulsada()==A){
 		ESTADO=ABIERTA;
 		visualizarPuertaAbierta();
 		seg3=0;
 		MostrarRombo(1, 5, 5);
 		MostrarRomboGrande(2, 100, 100);
 	}	
+	else{
+			iprintf("\x1b[1;1HSe ha pulsado por interrupcion la tecla. Valor=%d",TeclaPulsada());
+	}
 }
 }
 
@@ -61,6 +64,7 @@ if (ESTADO!=ESPERA)
 void EstablecerVectorInt()
 {
 // A COMPLETAR
-	
+	irqSet(IRQ_KEYS, RutAtencionTeclado);
+	irqSet(IRQ_TIMER0, RutAtencionTempo);
 }
 

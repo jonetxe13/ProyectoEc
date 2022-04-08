@@ -34,11 +34,12 @@ void juego()
 
 	//*******************************EN LA 2.ACTIVIDAD ********************************//
         // LLAMADAS A REALIZAR:
+	// Habilitar interrupciones.
 	// Configurar el teclado.
 	int APorInt = 0x4001;
 	ConfigurarTeclado(APorInt);
 	// Configurar el temporizador.
-	// ConfigurarTemporizador(int Latch, int Conf_Tempo);
+	//ConfigurarTemporizador(int Latch, int Conf_Tempo);
 	// Habilitar las interrupciones del teclado.
 	HabilitarIntTeclado();
 	// Habilitar las interrupciones del temporizador.
