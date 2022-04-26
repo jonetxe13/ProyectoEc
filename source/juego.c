@@ -38,10 +38,15 @@ void juego()
 	int APorInt = 0x4001;
 	ConfigurarTeclado(APorInt);
 	// Configurar el temporizador.
+	int Latch=65536 - ((1/5) * (33554432/256));
+	int Conf_Tempo=0x0002;
+	ConfigurarTemporizador(Latch, Conf_Tempo);
 	// ConfigurarTemporizador(int Latch, int Conf_Tempo);
 	// Habilitar las interrupciones del teclado.
 	HabilitarIntTeclado();
 	// Habilitar las interrupciones del temporizador.
+	PonerEnMarchaTempo();
+	HabilitarIntTempo();
 	// Establecer las rutinas de atención a interrupciones
 	EstablecerVectorInt();
 	//******************************************************************************//

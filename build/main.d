@@ -1,4 +1,4 @@
-main.o: /home/jonetxe13/ProyectoEc/source/main.c \
+main.o: /home/jonetxe13/ProyectoEC/source/main.c \
  /opt/devkitpro/libnds/include/nds.h \
  /opt/devkitpro/libnds/include/nds/libversion.h \
  /opt/devkitpro/libnds/include/nds/ndstypes.h \
@@ -59,10 +59,10 @@ main.o: /home/jonetxe13/ProyectoEc/source/main.c \
  /opt/devkitpro/libnds/include/nds/arm9/video.h \
  /opt/devkitpro/libnds/include/nds/arm9/videoGL.h \
  /opt/devkitpro/libnds/include/nds/arm9/nand.h \
- /home/jonetxe13/ProyectoEc/include/graficos.h \
- /home/jonetxe13/ProyectoEc/include/definiciones.h \
- /home/jonetxe13/ProyectoEc/include/sprites.h \
- /home/jonetxe13/ProyectoEc/include/juego.h
+ /home/jonetxe13/ProyectoEC/include/graficos.h \
+ /home/jonetxe13/ProyectoEC/include/definiciones.h \
+ /home/jonetxe13/ProyectoEC/include/sprites.h \
+ /home/jonetxe13/ProyectoEC/include/juego.h
 /opt/devkitpro/libnds/include/nds.h:
 /opt/devkitpro/libnds/include/nds/libversion.h:
 /opt/devkitpro/libnds/include/nds/ndstypes.h:
@@ -123,7 +123,7 @@ main.o: /home/jonetxe13/ProyectoEc/source/main.c \
 /opt/devkitpro/libnds/include/nds/arm9/video.h:
 /opt/devkitpro/libnds/include/nds/arm9/videoGL.h:
 /opt/devkitpro/libnds/include/nds/arm9/nand.h:
-/home/jonetxe13/ProyectoEc/include/graficos.h:
-/home/jonetxe13/ProyectoEc/include/definiciones.h:
-/home/jonetxe13/ProyectoEc/include/sprites.h:
-/home/jonetxe13/ProyectoEc/include/juego.h:
+/home/jonetxe13/ProyectoEC/include/graficos.h:
+/home/jonetxe13/ProyectoEC/include/definiciones.h:
+/home/jonetxe13/ProyectoEC/include/sprites.h:
+/home/jonetxe13/ProyectoEC/include/juego.h:
