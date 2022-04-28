@@ -54,28 +54,46 @@ void juego()
 		
 		if(ESTADO == INICIO){
 			//Insertar Portada y Texto(pulsa START para comenzar)
-			iprintf("\x1b[22;5HPrueba de escritura");						
+			iprintf("\x1b[2;2HEstamos en el estado INICIO");
 			if(TeclaPulsada()==START){
 				ESTADO = SELECCION;	
 			}
 		}	
 		else if(ESTADO == SELECCION){
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
+			iprintf("\x1b[2;2HEstamos en el estado SELECCION");
+
 			PERSONAJE = 0;
 			//Rotacion de personajes
 				if(TeclaPulsada()==L){
 					PERSONAJE-=1;
+					if(PERSONAJE<0){
+						PERSONAJE=2;
+					}
+					else if(PERSONAJE>2){
+						PERSONAJE=0;
+					}
 				}
-				else if(TeclaPulsada()=R){
+				else if(TeclaPulsada()==R){
 					PERSONAJE+=1;
+					if(PERSONAJE<0){
+						PERSONAJE=2;
+					}
+					else if(PERSONAJE>2){
+						PERSONAJE=0;
+					}
+					if(TeclaPulsada() == A){
+						iprintf("\x1b[7;2HEl personaje es el numero", PERSONAJE);
+						ESTADO = PELEA;
+					}
 				}
-				if(PERSONAJE<0){
-					PERSONAJE=2;
+				if(TeclaPulsada() == A){
+						iprintf("\x1b[7;2HEl personaje es el numero", PERSONAJE);
+						ESTADO = PELEA;
 				}
-				else if(PERSONAJE>2){
-					PERSONAJE=0;
-				}
-			
+		}
+	
+
 			//Insertar Personajes
 			//Insertar SONIC
 			//else if(PERSONAJE==SONIC){
@@ -98,9 +116,32 @@ void juego()
 					//ESTADO = PELEA;
 				//}
 			//}
-		}
+		
 		else if(ESTADO == PELEA){
 			PonerEnMarchaTempo();
+			iprintf("\x1b[2;2HEstamos en el estado PELEA");
+				int ataque;
+				int defensa;
+				int velocidad;
+					if( PERSONAJE == SONIC ){
+						iprintf("\x1b[22;5HEl personaje seleccionado es Sonic");
+						ataque = 2;
+						defensa = 3;
+						velocidad = 2;
+					}
+					else if( PERSONAJE == GOKU ){
+						iprintf("\x1b[22;5HEl personaje seleccionado es Goku");
+						ataque = 3;
+						defensa = 2;
+						velocidad = 2;
+					}
+					else if( PERSONAJE == KRATOS ){
+						iprintf("\x1b[22;5HEl personaje seleccionado es Kratos");
+						ataque = 2;
+						defensa = 2;
+						velocidad = 3;
+					}
+			}
 			//Pausa
 			//if(TeclaPulsada()==START){
 				//Se para el tiempo
@@ -176,7 +217,7 @@ void juego()
 				//}
 			//}
 
-		}
+		
 		else if(ESTADO == FIN){
 			//Pulsa A para volver a la selccion de personaje
 			if(TeclaPulsada()==A){
@@ -188,4 +229,4 @@ void juego()
 			}
 		}
 	}
-}
+

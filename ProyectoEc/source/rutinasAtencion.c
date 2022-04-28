@@ -16,18 +16,15 @@ int seg3;
 
 void RutAtencionTeclado ()
 {
-if (ESTADO == CERRADA)
+if (ESTADO == INICIO)
 {		
-	if(TeclaPulsada()==A){
-		ESTADO=ABIERTA;
+	if(TeclaPulsada()==ARRIBA){
+		ESTADO=SELECCION;
 		visualizarPuertaAbierta();
 		seg3=0;
 		MostrarRombo(1, 5, 5);
 		MostrarRomboGrande(2, 100, 100);
 	}	
-	else{
-			iprintf("\x1b[1;1HSe ha pulsado por interrupcion la tecla. Valor=%d",TeclaPulsada());
-	}
 }
 }
 
@@ -37,7 +34,7 @@ void RutAtencionTempo()
 	static int seg=0;
 	
 
-if (ESTADO!=ESPERA)
+if (ESTADO!=INICIO)
 {
 	tick++; 
 	if (tick==5)
@@ -45,14 +42,14 @@ if (ESTADO!=ESPERA)
 		seg++;
 		iprintf("\x1b[13;5HSegundos que han pasado=%d", seg);
 		tick=0;
-		if (ESTADO == ABIERTA)
+		if (ESTADO == SELECCION)
 		{
 			seg3++;
 			if (seg3==3)
 			{
 				visualizarPuerta();
 				seg3=0;
-				ESTADO=CERRADA;
+				ESTADO=PELEA;
 				BorrarRombo(1, 5, 5);
 				BorrarRomboGrande(2, 100, 100);
 			}
