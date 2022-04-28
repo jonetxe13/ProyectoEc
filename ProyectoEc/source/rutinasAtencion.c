@@ -16,15 +16,11 @@ int seg3;
 
 void RutAtencionTeclado ()
 {
-if (ESTADO == INICIO)
+if (ESTADO == SELECCION)
 {		
-	if(TeclaPulsada()==ARRIBA){
-		ESTADO=SELECCION;
-		visualizarPuertaAbierta();
-		seg3=0;
-		MostrarRombo(1, 5, 5);
-		MostrarRomboGrande(2, 100, 100);
-	}	
+	if(TeclaPulsada() == A){
+		ESTADO = PELEA;
+	}
 }
 }
 
@@ -40,7 +36,7 @@ if (ESTADO!=INICIO)
 	if (tick==5)
 	{
 		seg++;
-		iprintf("\x1b[13;5HSegundos que han pasado=%d", seg);
+		//iprintf("\x1b[16;5HSegundos que han pasado=%d", seg);
 		tick=0;
 		if (ESTADO == SELECCION)
 		{

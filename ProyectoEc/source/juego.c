@@ -26,19 +26,14 @@ void juego()
 
 	ESTADO=INICIO;
 	
-	//Escribe en la fila 22 columna 5 de la pantalla	
-	iprintf("\x1b[22;5HPrueba de escritura");						
-
-/*Si se quiere visualizar el valor de una variable escribir %d dentro de las comillas y el nombre de la variable fuera de las comillas.*/
-	iprintf("\x1b[23;5HPrueba de escritura con variable. Valor=%d", i);
-
 	//*******************************EN LA 2.ACTIVIDAD ********************************//
         // LLAMADAS A REALIZAR:
 	// Configurar el teclado.
-	int APorInt = 0x4001;
-	ConfigurarTeclado(APorInt);
+	//int APorInt = 0x4001;
+	int ALRPorInt = 0x4301;
+	ConfigurarTeclado(ALRPorInt);
 	// Configurar el temporizador.
-	int 	Latch=65536 - ((1/5) * (33554432/256));	
+	int Latch=65536 - ((1/5) * (33554432/256));	
 	// ConfigurarTemporizador(int Latch, int Conf_Tempo);
 	ConfigurarTemporizador(Latch,0x0002);
 	// Habilitar las interrupciones del teclado.
@@ -63,7 +58,8 @@ void juego()
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
 			iprintf("\x1b[2;2HEstamos en el estado SELECCION");
 
-			PERSONAJE = 0;
+			
+			iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
 			//Rotacion de personajes
 				if(TeclaPulsada()==L){
 					PERSONAJE-=1;
@@ -73,6 +69,7 @@ void juego()
 					else if(PERSONAJE>2){
 						PERSONAJE=0;
 					}
+					iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
 				}
 				else if(TeclaPulsada()==R){
 					PERSONAJE+=1;
@@ -82,141 +79,36 @@ void juego()
 					else if(PERSONAJE>2){
 						PERSONAJE=0;
 					}
-					if(TeclaPulsada() == A){
-						iprintf("\x1b[7;2HEl personaje es el numero", PERSONAJE);
-						ESTADO = PELEA;
-					}
-				}
-				if(TeclaPulsada() == A){
-						iprintf("\x1b[7;2HEl personaje es el numero", PERSONAJE);
-						ESTADO = PELEA;
+					iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
 				}
 		}
-	
-
 			//Insertar Personajes
-			//Insertar SONIC
-			//else if(PERSONAJE==SONIC){
-				//Mostrar ficha de SONIC
-				//if(TeclaPulsada==A){
-					//ESTADO = PELEA;
-				//}
-			//}
-			//Insertar GOKU
-			//else if(PERSONAJE==GOKU){
-				//Mostrar ficha de GOKU
-				//if(TeclaPulsada==A){
-					//ESTADO = PELEA;
-				//}
-			//}
-			//Insertar KRATOS
-			//else if(PERSONAJE==KRATOS){
-				//Mostrar ficha de KRATOS
-				//if(TeclaPulsada==A){
-					//ESTADO = PELEA;
-				//}
-			//}
-		
 		else if(ESTADO == PELEA){
 			PonerEnMarchaTempo();
+
 			iprintf("\x1b[2;2HEstamos en el estado PELEA");
 				int ataque;
 				int defensa;
 				int velocidad;
 					if( PERSONAJE == SONIC ){
-						iprintf("\x1b[22;5HEl personaje seleccionado es Sonic");
+						iprintf("\x1b[21;5HEl personaje seleccionado es Sonic");
 						ataque = 2;
 						defensa = 3;
 						velocidad = 2;
 					}
 					else if( PERSONAJE == GOKU ){
-						iprintf("\x1b[22;5HEl personaje seleccionado es Goku");
+						iprintf("\x1b[21;5HEl personaje seleccionado es Goku");
 						ataque = 3;
 						defensa = 2;
 						velocidad = 2;
 					}
 					else if( PERSONAJE == KRATOS ){
-						iprintf("\x1b[22;5HEl personaje seleccionado es Kratos");
+						iprintf("\x1b[21;5HEl personaje seleccionado es Kratos");
 						ataque = 2;
 						defensa = 2;
 						velocidad = 3;
 					}
 			}
-			//Pausa
-			//if(TeclaPulsada()==START){
-				//Se para el tiempo
-					//PararTempo();
-				//Se para el juego
-			//}
-
-			//Defenderse
-			//else if(TeclaPulsada()==B){
-				//Bloquea y no le hacen daño
-			//}
-
-			//Ataque
-			//Ataque SONIC
-			//else if(PERSONAJE==SONIC){
-				//Insertar a SONIC en pelea
-				//if(TeclaPulsada==A){
-					//Mostrar ataques de sonic
-					//if(TeclaPulsada==A){
-						//Usar ATAQUE1
-					//}	
-					//else if(TeclaPulsada==B){
-						//Usar ATAQUE2
-					//}
-				//}
-			//Ataque GOKU
-			//else if(PERSONAJE==GOKU){
-				//Insertar a GOKU en pelea
-				//if(TeclaPulsada==A){
-					//Mostrar ataques de goku
-					//if(TeclaPulsada==A){
-						//Usar ATAQUE1
-					//}	
-					//else if(TeclaPulsada==B){
-						//Usar ATAQUE2
-					//}
-				//}
-			//Ataque KRATOS
-			//else if(PERSONAJE==KRATOS){
-				//Insertar a KRATOS en pelea
-				//if(TeclaPulsada==A){
-					//Mostrar ataques de kratos
-					//if(TeclaPulsada==A){
-						//Usar ATAQUE1
-					//}	
-					//else if(TeclaPulsada==B){
-						//Usar ATAQUE2
-					//}
-				//}
-
-			//Si se acaba la vida de alguno de los combatientes se acaba el combate
-			//else if(HP2 == 0){
-				//ESTADO = FIN
-				//Mostrar mensaje Victoria
-			//}
-			//else if(HP1 == 0){
-				//ESTADO = FIN
-				//Mostrar mensaje Derrota
-			//}
-
-			//Si se acaba el tiempo determinado para el combate se acab el combate
-			//else if(Timer = (tiempo maximo de pelea)){
-				//ESTADO = FIN
-				//Mostrar mensaje victoria para HP maximo
-				//if(HP1>HP2){
-					//Mostrar imagen victoria
-				//}
-				//else if(HP1==HP2)
-					//Mostrar imagen empate
-				//}
-				//else{
-					//Mostrar imagen derrota
-				//}
-			//}
-
 		
 		else if(ESTADO == FIN){
 			//Pulsa A para volver a la selccion de personaje
@@ -229,4 +121,4 @@ void juego()
 			}
 		}
 	}
-
+}

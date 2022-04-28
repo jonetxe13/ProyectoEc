@@ -49,6 +49,12 @@ int TeclaPulsada()
 		else if(TECLAS_DAT == 895){
 			tecla = ABAJO;
 		}
+		else if(TECLAS_DAT == 767){
+			tecla = R;
+		}
+		else if(TECLAS_DAT == 511){
+			tecla = L;
+		}
 		return tecla;
 	}
 }
