@@ -117,7 +117,8 @@ export LIBPATHS		:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib)
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
 	@make --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
-	@cp $(OUTPUT).nds /mnt/c/Users/jonet/OneDrive/Escritorio
+	@cp $(OUTPUT).nds /mnt/c/Users/jonetxe13/Desktop
+
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...

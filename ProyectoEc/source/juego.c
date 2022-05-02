@@ -22,7 +22,8 @@ void juego()
 {	
 	//definiciones de variables
 	int i=9;
-	int tecla=0;;
+	int tecla=0;
+	int presionada = 0; 
 
 	ESTADO=INICIO;
 	
@@ -58,10 +59,8 @@ void juego()
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
 			iprintf("\x1b[2;2HEstamos en el estado SELECCION");
 
-			
-			iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
-			//Rotacion de personajes
-				if(TeclaPulsada()==L){
+				if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
+					presionada=1;
 					PERSONAJE-=1;
 					if(PERSONAJE<0){
 						PERSONAJE=2;
@@ -71,7 +70,8 @@ void juego()
 					}
 					iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
 				}
-				else if(TeclaPulsada()==R){
+				else if(TeclaDetectada() && TeclaPulsada()==R && presionada==0){
+					presionada=1;
 					PERSONAJE+=1;
 					if(PERSONAJE<0){
 						PERSONAJE=2;
@@ -81,6 +81,11 @@ void juego()
 					}
 					iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
 				}
+				else if(presionada==1 && TeclaDetectada()==0){
+					presionada=0;
+				}
+			iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
+			//Rotacion de personajes
 		}
 			//Insertar Personajes
 		else if(ESTADO == PELEA){
