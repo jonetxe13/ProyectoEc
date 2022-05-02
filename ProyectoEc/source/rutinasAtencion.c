@@ -13,6 +13,8 @@ int ESTADO;
 int PERSONAJE;
 int ATAQUES;
 int seg3;
+int HP1 = vida;
+int HP2 = vida;
 
 void RutAtencionTeclado ()
 {
@@ -25,13 +27,24 @@ if (ESTADO == SELECCION)
 else if (ESTADO == PELEA)
 {
 	if(TeclaPulsada() == A){
-		vida2 -= 5;
-		iprintf("\x1b[1;1HLa vida2 es:%d",vida2);
+		HP2 -= 5;
 	}
 	else if(TeclaPulsada() == B){
-		vida2 -= 20;
-		iprintf("\x1b[1;1HLa vida2 es:%d",vida2);
+		HP2 -= 20;
 	}
+	if(HP1 <= 0 || HP2 <= 0){
+		ESTADO == FIN;
+	}
+}
+else if(ESTADO == FIN){
+
+			if(TeclaPulsada()==A){
+				ESTADO = SELECCION;
+			}
+			//Pulsa B para finalizar 
+			else if(TeclaPulsada()==B){
+				ESTADO = INICIO;
+			}
 }
 }
 
@@ -47,16 +60,16 @@ if (ESTADO!=INICIO)
 	if (tick==5)
 	{
 		seg++;
-		//iprintf("\x1b[16;5HSegundos que han pasado=%d", seg);
 		tick=0;
-		if (ESTADO == SELECCION)
+		if (ESTADO == PELEA)
 		{
 			seg3++;
-			if (seg3==3)
+			iprintf("\x1b[6;5HSegundos=%d", seg3);
+			if (seg3==10)
 			{
 				visualizarPuerta();
 				seg3=0;
-				ESTADO=PELEA;
+				ESTADO=FIN;
 				BorrarRombo(1, 5, 5);
 				BorrarRomboGrande(2, 100, 100);
 			}

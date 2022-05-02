@@ -31,11 +31,10 @@ void juego()
         // LLAMADAS A REALIZAR:
 	// Configurar el teclado.
 	//int APorInt = 0x4001;
-	int ALRPorInt = 0x4301;
-	ConfigurarTeclado(ALRPorInt);
+	int ABPorInt = 0x4003;
+	ConfigurarTeclado(ABPorInt);
 	// Configurar el temporizador.
-	int Latch=65536 - ((1/5) * (33554432/256));	
-	// ConfigurarTemporizador(int Latch, int Conf_Tempo);
+	int Latch=39321;	
 	ConfigurarTemporizador(Latch,0x0002);
 	// Habilitar las interrupciones del teclado.
 	HabilitarIntTeclado();
@@ -50,14 +49,14 @@ void juego()
 		
 		if(ESTADO == INICIO){
 			//Insertar Portada y Texto(pulsa START para comenzar)
-			iprintf("\x1b[2;2HEstamos en el estado INICIO");
+			iprintf("\x1b[2;2Hestado INICIO");
 			if(TeclaPulsada()==START){
 				ESTADO = SELECCION;	
 			}
 		}	
 		else if(ESTADO == SELECCION){
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
-			iprintf("\x1b[2;2HEstamos en el estado SELECCION");
+			iprintf("\x1b[2;2Hestado SELECCION");
 
 				if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
 					presionada=1;
@@ -68,7 +67,7 @@ void juego()
 					else if(PERSONAJE>2){
 						PERSONAJE=0;
 					}
-					iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
+					iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 				}
 				else if(TeclaDetectada() && TeclaPulsada()==R && presionada==0){
 					presionada=1;
@@ -79,55 +78,52 @@ void juego()
 					else if(PERSONAJE>2){
 						PERSONAJE=0;
 					}
-					iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
+					iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 				}
 				else if(presionada==1 && TeclaDetectada()==0){
 					presionada=0;
 				}
-			iprintf("\x1b[7;2HEl personaje es el numero %d", PERSONAJE);
+			iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			//Rotacion de personajes
 		}
 			//Insertar Personajes
 		else if(ESTADO == PELEA){
 			PonerEnMarchaTempo();
-
-			iprintf("\x1b[2;2HEstamos en el estado PELEA");
 				int ataque;
 				int defensa;
 				int velocidad;
+
+			iprintf("\x1b[2;2HEstamos en el PELEA");
+			iprintf("\x1b[15;1HLa vida1: %d", HP1);
+			iprintf("\x1b[17;1HLa vida2: %d", HP2);
+
 					if( PERSONAJE == SONIC ){
-						iprintf("\x1b[21;5HEl personaje seleccionado es Sonic");
+						iprintf("\x1b[21;5HEl personaje Sonic");
 						ataque = 2;
 						defensa = 3;
 						velocidad = 2;
 						MostrarRombo();
 					}
 					else if( PERSONAJE == GOKU ){
-						iprintf("\x1b[21;5HEl personaje seleccionado es Goku");
+						iprintf("\x1b[21;5HEl personaje Goku");
 						ataque = 3;
 						defensa = 2;
 						velocidad = 2;
 					}
 					else if( PERSONAJE == KRATOS ){
-						iprintf("\x1b[21;5HEl personaje seleccionado es Kratos");
+						iprintf("\x1b[21;5HEl personaje Kratos");
 						ataque = 2;
 						defensa = 2;
 						velocidad = 3;
 					}
-
-					iprintf("\x1b[16;5HLa vida1: %d", vida1);
-					iprintf("\x1b[17;5HLa vida2: %d", vida2);
+			if(HP1 <= 0 || HP2 <= 0){
+				ESTADO = FIN;
 			}
+		}
 		
 		else if(ESTADO == FIN){
+			iprintf("\x1b[2;1H Se ha acabado la partida");
 			//Pulsa A para volver a la selccion de personaje
-			if(TeclaPulsada()==A){
-				ESTADO = SELECCION;
-			}
-			//Pulsa B para finalizar 
-			else if(TeclaPulsada()==B){
-				ESTADO = INICIO;
-			}
 		}
 	}
 }
