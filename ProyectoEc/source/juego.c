@@ -100,6 +100,7 @@ void juego()
 						ataque = 2;
 						defensa = 3;
 						velocidad = 2;
+						MostrarRombo();
 					}
 					else if( PERSONAJE == GOKU ){
 						iprintf("\x1b[21;5HEl personaje seleccionado es Goku");
@@ -113,6 +114,9 @@ void juego()
 						defensa = 2;
 						velocidad = 3;
 					}
+
+					iprintf("\x1b[16;5HLa vida1: %d", vida1);
+					iprintf("\x1b[17;5HLa vida2: %d", vida2);
 			}
 		
 		else if(ESTADO == FIN){

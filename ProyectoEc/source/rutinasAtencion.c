@@ -22,6 +22,17 @@ if (ESTADO == SELECCION)
 		ESTADO = PELEA;
 	}
 }
+else if (ESTADO == PELEA)
+{
+	if(TeclaPulsada() == A){
+		vida2 -= 5;
+		iprintf("\x1b[1;1HLa vida2 es:%d",vida2);
+	}
+	else if(TeclaPulsada() == B){
+		vida2 -= 20;
+		iprintf("\x1b[1;1HLa vida2 es:%d",vida2);
+	}
+}
 }
 
 void RutAtencionTempo()

@@ -56,3 +56,5 @@ extern int PERSONAJE;
 #define ATAQUE1 0
 #define ATAQUE2 1
 extern int ATAQUES;
+extern int vida1 = 100;
+extern int vida2 = 100;

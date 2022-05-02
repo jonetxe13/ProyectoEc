@@ -19,7 +19,7 @@ u16* gfxromboGrande;
 void memoriaReserba()
 {
 	/* Pantaila nagusian gehitu nahi den sprite bakoitzarentzako horrelako bat egin behar da. */
-	gfxrombo= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
+	gfxsonic = oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
 	gfxromboGrande=oamAllocateGfx(&oamMain, SpriteSize_32x32, SpriteColorFormat_256Color);
 }
 
@@ -32,8 +32,8 @@ void EstablecerPaletaPrincipal() {
 	SPRITE_PALETTE[2] = RGB15(0,31,0); // los píxeles con valor 2 serán verdes.
 	SPRITE_PALETTE[5] = RGB15(0,0,255); // 5 = Azul
 	SPRITE_PALETTE[6]; // 6 = Negro
-	SPRITE_PALETTE[3] =	RGB(255,255,255); // 3 = Blanco
-	SPRITE_PALETTE[24] = RGB(255,215,126); //24 = Carne
+	SPRITE_PALETTE[3] =	RGB15(255,255,255); // 3 = Blanco
+	SPRITE_PALETTE[24] = RGB15(255,215,126); //24 = Carne
 }	
 
 
@@ -145,7 +145,7 @@ oamSet(&oamMain, //main graphics engine context
 		0,					  //this is the palette index if multiple palettes or the alpha value if bmp sprite	
 		SpriteSize_16x16,     
 		SpriteColorFormat_256Color, 
-		gfxrombo,//+16*16/2,                  //pointer to the loaded graphics
+		gfxsonic,//+16*16/2,                  //pointer to the loaded graphics
 		-1,                  //sprite rotation data  
 		false,               //double the size when rotating?
 		false,			//hide the sprite?
@@ -167,7 +167,7 @@ oamSet(&oamMain, //main graphics engine context
 		0,					  //this is the palette index if multiple palettes or the alpha value if bmp sprite	
 		SpriteSize_16x16,     
 		SpriteColorFormat_256Color, 
-		gfxrombo,//+16*16/2,                  //pointer to the loaded graphics
+		gfxsonic,//+16*16/2,                  //pointer to the loaded graphics
 		-1,                  //sprite rotation data  
 		false,               //double the size when rotating?
 		true,			//hide the sprite?
