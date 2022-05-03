@@ -67,7 +67,6 @@ if (ESTADO!=INICIO)
 			iprintf("\x1b[6;5HSegundos=%d", seg3);
 			if (seg3==10)
 			{
-				visualizarPuerta();
 				seg3=0;
 				ESTADO=FIN;
 				BorrarRombo(1, 5, 5);

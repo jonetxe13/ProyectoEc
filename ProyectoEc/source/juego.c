@@ -103,7 +103,7 @@ void juego()
 						ataque = 2;
 						defensa = 3;
 						velocidad = 2;
-						MostrarSonic();
+						MostrarSonic(126,70,150);
 					}
 					else if( PERSONAJE == GOKU ){
 						iprintf("\x1b[21;5HEl personaje Goku");
