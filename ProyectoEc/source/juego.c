@@ -88,6 +88,7 @@ void juego()
 		}
 			//Insertar Personajes
 		else if(ESTADO == PELEA){
+			visualizarPelea();
 			PonerEnMarchaTempo();
 				int ataque;
 				int defensa;
@@ -102,7 +103,7 @@ void juego()
 						ataque = 2;
 						defensa = 3;
 						velocidad = 2;
-						MostrarRombo();
+						MostrarSonic();
 					}
 					else if( PERSONAJE == GOKU ){
 						iprintf("\x1b[21;5HEl personaje Goku");

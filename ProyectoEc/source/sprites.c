@@ -135,7 +135,7 @@ int i;
 
 /* Esta función dibuja un rombo en la posición x-y de pantalla. A cada rombo que se quiera mostrar en pantalla se le debe asignar un indice distinto, un valor entre 0 y 126. */
 
-void MostrarRombo(int indice, int x, int y)
+void MostrarSonic(int indice, int x, int y)
 { 
  
 oamSet(&oamMain, //main graphics engine context
