@@ -24,6 +24,7 @@ void juego()
 	int i=9;
 	int tecla=0;
 	int presionada = 0; 
+	int limpiar = 0;
 
 	ESTADO=INICIO;
 	
@@ -52,9 +53,7 @@ void juego()
 			HP2 =100;
 			//Insertar Portada y Texto(pulsa START para comenzar)
 			iprintf("\x1b[2;2Hestado INICIO");
-			if(TeclaPulsada()==START){
-				ESTADO = SELECCION;	
-			}
+			if(TeclaPulsada()==START) ESTADO = SELECCION;	
 		}	
 		else if(ESTADO == SELECCION){
 			HP1 =100;
@@ -65,33 +64,32 @@ void juego()
 				if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
 					presionada=1;
 					PERSONAJE-=1;
-					if(PERSONAJE<0){
-						PERSONAJE=2;
-					}
-					else if(PERSONAJE>2){
-						PERSONAJE=0;
-					}
+					if(PERSONAJE<0) PERSONAJE=2;
+					else if(PERSONAJE>2) PERSONAJE=0;
+				
 					iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 				}
 				else if(TeclaDetectada() && TeclaPulsada()==R && presionada==0){
 					presionada=1;
 					PERSONAJE+=1;
-					if(PERSONAJE<0){
-						PERSONAJE=2;
-					}
-					else if(PERSONAJE>2){
-						PERSONAJE=0;
-					}
+					if(PERSONAJE<0) PERSONAJE=2;
+					else if(PERSONAJE>2) PERSONAJE=0;
+					
 					iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 				}
-				else if(presionada==1 && TeclaDetectada()==0){
-					presionada=0;
-				}
+				else if(presionada==1 && TeclaDetectada()==0) presionada=0;
+				
 			iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			//Rotacion de personajes
 		}
 			//Insertar Personajes
 		else if(ESTADO == PELEA){
+			if(limpiar = 0){
+				for(int i = 0; i<=24; i++){
+					iprintf("\x1b[%d;%dH\n");
+				}
+				limpiar = 1;
+			}
 			visualizarPelea();
 			PonerEnMarchaTempo();
 				int ataque;
@@ -121,13 +119,14 @@ void juego()
 						defensa = 2;
 						velocidad = 3;
 					}
-			if(HP1 <= 0 || HP2 <= 0){
-				ESTADO = FIN;
-			}
+			if(HP1 <= 0 || HP2 <= 0)ESTADO = FIN;
 		}
 		
 		else if(ESTADO == FIN){
+
 			iprintf("\x1b[2;1H Se ha acabado la partida");
+			if(HP1 <= 0) iprintf("\x1b[15;1HLa vida1: %d", HP1);
+			if(HP2 <= 0) iprintf("\x1b[17;1HLa vida2: %d", HP2);
 			//Pulsa A para volver a la selccion de personaje
 		}
 	}

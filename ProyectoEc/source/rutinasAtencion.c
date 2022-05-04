@@ -20,13 +20,9 @@ int player = 0;
 void RutAtencionTeclado (){
 
 if (ESTADO == SELECCION){		
-	if(TeclaPulsada() == A){
-		ESTADO = PELEA;
-	}
+	if(TeclaPulsada() == A) ESTADO = PELEA;
 }
 else if (ESTADO == PELEA){	
-
-
 	if(player == 0){
 		if(TeclaPulsada() == A){
 			HP2 -= 5;
@@ -37,12 +33,13 @@ else if (ESTADO == PELEA){
 			player = 1;
 		}
 	}
-	else if(player == 1){
-		if(TeclaPulsada() == A){
+	else{
+		int aleatorio = rand()%2;
+		if(aleatorio == 0){
 			HP1 -= 5;
 			player = 0;
 		}
-		else if(TeclaPulsada() == B){
+		else if(aleatorio == 1){
 			HP1 -= 20;
 			player = 0;
 		}
@@ -50,13 +47,9 @@ else if (ESTADO == PELEA){
 }
 else if(ESTADO == FIN){
 
-			if(TeclaPulsada()==A){
-				ESTADO = SELECCION;
-			}
+			if(TeclaPulsada()==A) ESTADO = SELECCION;
 			//Pulsa B para finalizar 
-			else if(TeclaPulsada()==B){
-				ESTADO = INICIO;
-			}
+			else if(TeclaPulsada()==B) ESTADO = INICIO;
 }
 }
 
@@ -76,7 +69,7 @@ if (ESTADO!=INICIO)
 		if (ESTADO == PELEA)
 		{
 			seg3++;
-			iprintf("\x1b[6;5HSegundos=%d", seg3);
+			iprintf("\x1b[9;5HSegundos=%d", seg3);
 			if (seg3==100)
 			{
 				seg3=0;
