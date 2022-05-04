@@ -33,17 +33,6 @@ else if (ESTADO == PELEA){
 			player = 1;
 		}
 	}
-	else{
-		int aleatorio = rand()%2;
-		if(aleatorio == 0){
-			HP1 -= 5;
-			player = 0;
-		}
-		else if(aleatorio == 1){
-			HP1 -= 20;
-			player = 0;
-		}
-	}
 }
 else if(ESTADO == FIN){
 
@@ -68,8 +57,20 @@ if (ESTADO!=INICIO)
 		tick=0;
 		if (ESTADO == PELEA)
 		{
+					if(player != 0){
+						if(seg == 3){
+						int aleatorio = rand()%2;
+						if(aleatorio == 0){
+							HP1 -= 5; 
+							player = 0;
+						}else{ 
+							HP1 -= 20; 
+							player = 0;
+						}
+						seg = 0;
+						}
+					}
 			seg3++;
-			iprintf("\x1b[9;5HSegundos=%d", seg3);
 			if (seg3==100)
 			{
 				seg3=0;

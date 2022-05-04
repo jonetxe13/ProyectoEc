@@ -49,6 +49,12 @@ void juego()
       /*******************************PROYECTO*****************************************/
 		
 		if(ESTADO == INICIO){
+			if(limpiar = 0){
+				for(int i = 0; i<=20; i++){
+					iprintf("\n\n\n\n\n\n\n\n\n\n");
+				}
+				limpiar = 1;
+			}
 			HP1 =100;
 			HP2 =100;
 			//Insertar Portada y Texto(pulsa START para comenzar)
@@ -56,6 +62,13 @@ void juego()
 			if(TeclaPulsada()==START) ESTADO = SELECCION;	
 		}	
 		else if(ESTADO == SELECCION){
+			limpiar = 0;
+			if(limpiar = 0){
+				for(int i = 0; i<=20; i++){
+					iprintf("\n\n\n\n\n\n\n\n\n\n");
+				}
+				limpiar = 1;
+			}
 			HP1 =100;
 			HP2 =100;
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
@@ -84,9 +97,10 @@ void juego()
 		}
 			//Insertar Personajes
 		else if(ESTADO == PELEA){
+			limpiar = 0;
 			if(limpiar = 0){
-				for(int i = 0; i<=24; i++){
-					iprintf("\x1b[%d;%dH\n");
+				for(int i = 0; i<=20; i++){
+					iprintf("\n\n\n\n\n\n\n\n\n\n");
 				}
 				limpiar = 1;
 			}
@@ -119,14 +133,23 @@ void juego()
 						defensa = 2;
 						velocidad = 3;
 					}
-			if(HP1 <= 0 || HP2 <= 0)ESTADO = FIN;
+
+					
+					if(HP1 <= 0 || HP2 <= 0)ESTADO = FIN;
 		}
 		
 		else if(ESTADO == FIN){
+			limpiar = 0;
+			if(limpiar = 0){
+				for(int i = 0; i<=20; i++){
+					iprintf("\n\n\n\n\n\n\n\n\n\n");
+				}
+				limpiar = 1;
+			}
 
 			iprintf("\x1b[2;1H Se ha acabado la partida");
-			if(HP1 <= 0) iprintf("\x1b[15;1HLa vida1: %d", HP1);
-			if(HP2 <= 0) iprintf("\x1b[17;1HLa vida2: %d", HP2);
+			if(HP1 <= 0) iprintf("\x1b[15;1HGana la IA tonto que no sabes darle a la B xd");
+			else if(HP2 <= 0) iprintf("\x1b[17;1HGanas tu, sabes darle a la B xd");
 			//Pulsa A para volver a la selccion de personaje
 		}
 	}
