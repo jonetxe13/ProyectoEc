@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
-Este código se ha desarrollado basándose en el código de dovoto "Simple sprite demo" 
-y en otro ejemplo de Jaeden Ameronen
----------------------------------------------------------------------------------*/
+	Este código se ha desarrollado basándose en el código de dovoto "Simple sprite demo" 
+	y en otro ejemplo de Jaeden Ameronen
+	---------------------------------------------------------------------------------*/
 
 
 #include <nds.h> 		//librería de la nds
@@ -10,7 +10,7 @@ y en otro ejemplo de Jaeden Ameronen
 #include <unistd.h>		//librería para asegurar la compatibilidad entre sistemas operativos
 
 //librerías desarrolladas por nosotros para el proyecto
-	
+
 #include "definiciones.h"
 #include "perifericos.h"
 #include "rutinasAtencion.h"
@@ -27,9 +27,9 @@ void juego()
 	int limpiar = 0;
 
 	ESTADO=INICIO;
-	
+
 	//*******************************EN LA 2.ACTIVIDAD ********************************//
-        // LLAMADAS A REALIZAR:
+	// LLAMADAS A REALIZAR:
 	// Configurar el teclado.
 	//int APorInt = 0x4001;
 	int ABPorInt = 0x4003;
@@ -46,8 +46,8 @@ void juego()
 	//******************************************************************************//
 	while(1)
 	{	
-      /*******************************PROYECTO*****************************************/
-		
+		/*******************************PROYECTO*****************************************/
+
 		if(ESTADO == INICIO){
 			if(limpiar = 0){
 				for(int i = 0; i<=20; i++){
@@ -74,28 +74,28 @@ void juego()
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
 			iprintf("\x1b[2;2Hestado SELECCION");
 
-				if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
-					presionada=1;
-					PERSONAJE-=1;
-					if(PERSONAJE<0) PERSONAJE=2;
-					else if(PERSONAJE>2) PERSONAJE=0;
-				
-					iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
-				}
-				else if(TeclaDetectada() && TeclaPulsada()==R && presionada==0){
-					presionada=1;
-					PERSONAJE+=1;
-					if(PERSONAJE<0) PERSONAJE=2;
-					else if(PERSONAJE>2) PERSONAJE=0;
-					
-					iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
-				}
-				else if(presionada==1 && TeclaDetectada()==0) presionada=0;
-				
+			if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
+				presionada=1;
+				PERSONAJE-=1;
+				if(PERSONAJE<0) PERSONAJE=2;
+				else if(PERSONAJE>2) PERSONAJE=0;
+
+				iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
+			}
+			else if(TeclaDetectada() && TeclaPulsada()==R && presionada==0){
+				presionada=1;
+				PERSONAJE+=1;
+				if(PERSONAJE<0) PERSONAJE=2;
+				else if(PERSONAJE>2) PERSONAJE=0;
+
+				iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
+			}
+			else if(presionada==1 && TeclaDetectada()==0) presionada=0;
+
 			iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			//Rotacion de personajes
 		}
-			//Insertar Personajes
+		//Insertar Personajes
 		else if(ESTADO == PELEA){
 			limpiar = 0;
 			if(limpiar = 0){
@@ -106,38 +106,36 @@ void juego()
 			}
 			visualizarPelea();
 			PonerEnMarchaTempo();
-				int ataque;
-				int defensa;
-				int velocidad;
+			int ataque;
+			int defensa;
+			int velocidad;
 
 			iprintf("\x1b[2;2HEstamos en el PELEA");
 			iprintf("\x1b[15;1HLa vida1: %d", HP1);
 			iprintf("\x1b[17;1HLa vida2: %d", HP2);
 
-					if( PERSONAJE == SONIC ){
-						iprintf("\x1b[21;5HEl personaje Sonic");
-						ataque = 2;
-						defensa = 3;
-						velocidad = 2;
-						MostrarSonic(126,70,150);
-					}
-					else if( PERSONAJE == GOKU ){
-						iprintf("\x1b[21;5HEl personaje Goku");
-						ataque = 3;
-						defensa = 2;
-						velocidad = 2;
-					}
-					else if( PERSONAJE == KRATOS ){
-						iprintf("\x1b[21;5HEl personaje Kratos");
-						ataque = 2;
-						defensa = 2;
-						velocidad = 3;
-					}
-
-					
-					if(HP1 <= 0 || HP2 <= 0)ESTADO = FIN;
+			if( PERSONAJE == SONIC ){
+				iprintf("\x1b[21;5HEl personaje Sonic");
+				ataque = 2;
+				defensa = 3;
+				velocidad = 2;
+				MostrarSonic(126,70,150);
+			}
+			else if( PERSONAJE == GOKU ){
+				iprintf("\x1b[21;5HEl personaje Goku");
+				ataque = 3;
+				defensa = 2;
+				velocidad = 2;
+			}
+			else if( PERSONAJE == KRATOS ){
+				iprintf("\x1b[21;5HEl personaje Kratos");
+				ataque = 2;
+				defensa = 2;
+				velocidad = 3;
+			}
+			if(HP1 <= 0 || HP2 <= 0)ESTADO = FIN;
 		}
-		
+
 		else if(ESTADO == FIN){
 			limpiar = 0;
 			if(limpiar = 0){

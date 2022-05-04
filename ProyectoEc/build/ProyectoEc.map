@@ -2310,34 +2310,34 @@ ARM.exidx
  .debug_abbrev  0x0000000000003042      0x366 /opt/devkitpro/libnds/lib/libnds9.a(background.o)
  .debug_abbrev  0x00000000000033a8      0x26e /opt/devkitpro/libnds/lib/libnds9.a(trig.o)
 
-.debug_line     0x0000000000000000     0x8a6e
+.debug_line     0x0000000000000000     0x8a66
  *(.debug_line)
  .debug_line    0x0000000000000000      0x4f3 graficos.o
- .debug_line    0x00000000000004f3      0x3c8 rutinasAtencion.o
- .debug_line    0x00000000000008bb      0x2bb sprites.o
- .debug_line    0x0000000000000b76      0x36e perifericos.o
- .debug_line    0x0000000000000ee4      0x452 juego.o
- .debug_line    0x0000000000001336      0x1c9 main.o
- .debug_line    0x00000000000014ff      0x273 fondos.o
- .debug_line    0x0000000000001772      0x4b5 /opt/devkitpro/libnds/lib/libnds9.a(video.o)
- .debug_line    0x0000000000001c27     0x1736 /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o)
- .debug_line    0x000000000000335d      0x4dc /opt/devkitpro/libnds/lib/libnds9.a(system.o)
- .debug_line    0x0000000000003839     0x1414 /opt/devkitpro/libnds/lib/libnds9.a(console.o)
- .debug_line    0x0000000000004c4d      0x74e /opt/devkitpro/libnds/lib/libnds9.a(sprite.o)
- .debug_line    0x000000000000539b      0x597 /opt/devkitpro/libnds/lib/libnds9.a(initSystem.o)
- .debug_line    0x0000000000005932       0x8f /opt/devkitpro/libnds/lib/libnds9.a(securearea.o)
- .debug_line    0x00000000000059c1      0x54c /opt/devkitpro/libnds/lib/libnds9.a(interrupts.o)
- .debug_line    0x0000000000005f0d      0x23b /opt/devkitpro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_line    0x0000000000006148     0x14f5 /opt/devkitpro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_line    0x000000000000763d       0x96 /opt/devkitpro/libnds/lib/libnds9.a(dcache.o)
- .debug_line    0x00000000000076d3       0xe8 /opt/devkitpro/libnds/lib/libnds9.a(mpu_setup.o)
- .debug_line    0x00000000000077bb       0x74 /opt/devkitpro/libnds/lib/libnds9.a(IntrWait.o)
- .debug_line    0x000000000000782f       0x5c /opt/devkitpro/libnds/lib/libnds9.a(cpu_clock.o)
- .debug_line    0x000000000000788b       0x80 /opt/devkitpro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .debug_line    0x000000000000790b      0x1b0 /opt/devkitpro/libnds/lib/libnds9.a(biosCalls.o)
- .debug_line    0x0000000000007abb       0x57 /opt/devkitpro/libnds/lib/libnds9.a(swiSoftReset.o)
- .debug_line    0x0000000000007b12      0x725 /opt/devkitpro/libnds/lib/libnds9.a(background.o)
- .debug_line    0x0000000000008237      0x837 /opt/devkitpro/libnds/lib/libnds9.a(trig.o)
+ .debug_line    0x00000000000004f3      0x3ca rutinasAtencion.o
+ .debug_line    0x00000000000008bd      0x2bb sprites.o
+ .debug_line    0x0000000000000b78      0x36e perifericos.o
+ .debug_line    0x0000000000000ee6      0x448 juego.o
+ .debug_line    0x000000000000132e      0x1c9 main.o
+ .debug_line    0x00000000000014f7      0x273 fondos.o
+ .debug_line    0x000000000000176a      0x4b5 /opt/devkitpro/libnds/lib/libnds9.a(video.o)
+ .debug_line    0x0000000000001c1f     0x1736 /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o)
+ .debug_line    0x0000000000003355      0x4dc /opt/devkitpro/libnds/lib/libnds9.a(system.o)
+ .debug_line    0x0000000000003831     0x1414 /opt/devkitpro/libnds/lib/libnds9.a(console.o)
+ .debug_line    0x0000000000004c45      0x74e /opt/devkitpro/libnds/lib/libnds9.a(sprite.o)
+ .debug_line    0x0000000000005393      0x597 /opt/devkitpro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_line    0x000000000000592a       0x8f /opt/devkitpro/libnds/lib/libnds9.a(securearea.o)
+ .debug_line    0x00000000000059b9      0x54c /opt/devkitpro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_line    0x0000000000005f05      0x23b /opt/devkitpro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_line    0x0000000000006140     0x14f5 /opt/devkitpro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_line    0x0000000000007635       0x96 /opt/devkitpro/libnds/lib/libnds9.a(dcache.o)
+ .debug_line    0x00000000000076cb       0xe8 /opt/devkitpro/libnds/lib/libnds9.a(mpu_setup.o)
+ .debug_line    0x00000000000077b3       0x74 /opt/devkitpro/libnds/lib/libnds9.a(IntrWait.o)
+ .debug_line    0x0000000000007827       0x5c /opt/devkitpro/libnds/lib/libnds9.a(cpu_clock.o)
+ .debug_line    0x0000000000007883       0x80 /opt/devkitpro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .debug_line    0x0000000000007903      0x1b0 /opt/devkitpro/libnds/lib/libnds9.a(biosCalls.o)
+ .debug_line    0x0000000000007ab3       0x57 /opt/devkitpro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .debug_line    0x0000000000007b0a      0x725 /opt/devkitpro/libnds/lib/libnds9.a(background.o)
+ .debug_line    0x000000000000822f      0x837 /opt/devkitpro/libnds/lib/libnds9.a(trig.o)
 
 .debug_frame    0x0000000000000000      0xd24
  *(.debug_frame)
