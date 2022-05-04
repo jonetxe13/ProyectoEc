@@ -48,6 +48,8 @@ void juego()
       /*******************************PROYECTO*****************************************/
 		
 		if(ESTADO == INICIO){
+			HP1 =100;
+			HP2 =100;
 			//Insertar Portada y Texto(pulsa START para comenzar)
 			iprintf("\x1b[2;2Hestado INICIO");
 			if(TeclaPulsada()==START){
@@ -55,6 +57,8 @@ void juego()
 			}
 		}	
 		else if(ESTADO == SELECCION){
+			HP1 =100;
+			HP2 =100;
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
 			iprintf("\x1b[2;2Hestado SELECCION");
 

@@ -1,4 +1,4 @@
-sprites.o: /home/jonetxe13/ProyectoEC/ProyectoEc/source/sprites.c \
+fondos.o: /home/jonetxe13/ProyectoEC/ProyectoEc/source/fondos.c \
  /opt/devkitpro/libnds/include/nds.h \
  /opt/devkitpro/libnds/include/nds/libversion.h \
  /opt/devkitpro/libnds/include/nds/ndstypes.h \
@@ -59,8 +59,11 @@ sprites.o: /home/jonetxe13/ProyectoEC/ProyectoEc/source/sprites.c \
  /opt/devkitpro/libnds/include/nds/arm9/video.h \
  /opt/devkitpro/libnds/include/nds/arm9/videoGL.h \
  /opt/devkitpro/libnds/include/nds/arm9/nand.h \
- /home/jonetxe13/ProyectoEC/ProyectoEc/include/sprites.h \
- /home/jonetxe13/ProyectoEC/ProyectoEc/include/definiciones.h
+ /home/jonetxe13/ProyectoEC/ProyectoEc/include/fondos.h \
+ /home/jonetxe13/ProyectoEC/ProyectoEc/include/graficos.h \
+ /home/jonetxe13/ProyectoEC/ProyectoEc/build/Puerta.h \
+ /home/jonetxe13/ProyectoEC/ProyectoEc/build/PuertaAbierta.h \
+ /home/jonetxe13/ProyectoEC/ProyectoEc/build/FondoPelea.h
 /opt/devkitpro/libnds/include/nds.h:
 /opt/devkitpro/libnds/include/nds/libversion.h:
 /opt/devkitpro/libnds/include/nds/ndstypes.h:
@@ -121,5 +124,8 @@ sprites.o: /home/jonetxe13/ProyectoEC/ProyectoEc/source/sprites.c \
 /opt/devkitpro/libnds/include/nds/arm9/video.h:
 /opt/devkitpro/libnds/include/nds/arm9/videoGL.h:
 /opt/devkitpro/libnds/include/nds/arm9/nand.h:
-/home/jonetxe13/ProyectoEC/ProyectoEc/include/sprites.h:
-/home/jonetxe13/ProyectoEC/ProyectoEc/include/definiciones.h:
+/home/jonetxe13/ProyectoEC/ProyectoEc/include/fondos.h:
+/home/jonetxe13/ProyectoEC/ProyectoEc/include/graficos.h:
+/home/jonetxe13/ProyectoEC/ProyectoEc/build/Puerta.h:
+/home/jonetxe13/ProyectoEC/ProyectoEc/build/PuertaAbierta.h:
+/home/jonetxe13/ProyectoEC/ProyectoEc/build/FondoPelea.h:

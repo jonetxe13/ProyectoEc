@@ -146,7 +146,7 @@ oamSet(&oamMain, //main graphics engine context
 		SpriteSize_16x16,     
 		SpriteColorFormat_256Color, 
 		gfxsonic,//+16*16/2,                  //pointer to the loaded graphics
-		,                  //sprite rotation data  
+		-1,                  //sprite rotation data  
 		false,               //double the size when rotating?
 		false,			//hide the sprite?
 		false, false, //vflip, hflip
