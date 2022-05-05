@@ -125,8 +125,12 @@ void juego()
 		else if(ESTADO == FIN){
 
 			iprintf("\x1b[2;1H Se ha acabado la partida");
-			if(HP1 <= 0) iprintf("\x1b[15;1HGana la IA tonto que no sabes darle a la B xd");
-			else if(HP2 <= 0) iprintf("\x1b[17;1HGanas tu, sabes darle a la B xd");
+			if(HP1 <= 0){
+				iprintf("\x1b[15;1HGana la IA tonto que no sabes darle a la B xd");
+			}
+			else if(HP2 <= 0){
+				iprintf("\x1b[17;1HGanas tu, sabes darle a la B xd");
+			}
 			//Pulsa A para volver a la selccion de personaje
 		}
 	}
