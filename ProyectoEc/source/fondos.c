@@ -11,6 +11,9 @@
 #include "Puerta.h"
 #include "PuertaAbierta.h"
 #include "FondoPelea.h"
+#include "FondoSonic.h"
+#include "FondoGoku.h"
+#include "FondoKratos.h"
 
 /* Se elige el canal de DMA que se utilizará para copiar las imágenes en memoria.*/
 static const int DMA_CHANNEL = 3;
@@ -31,6 +34,30 @@ void visualizarPelea() {
                      FondoPeleaBitmap, /* Variable que se genera automaticamente */
                      (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
                      FondoPeleaBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+}
+
+void visualizarSonic() {
+	
+	dmaCopyHalfWords(DMA_CHANNEL,
+                     FondoSonicBitmap, /* Variable que se genera automaticamente */
+                     (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
+                     FondoSonicBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+}
+
+void visualizarGoku() {
+	
+	dmaCopyHalfWords(DMA_CHANNEL,
+                     FondoGokuBitmap, /* Variable que se genera automaticamente */
+                     (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
+                     FondoGokuBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+}
+
+void visualizarKratos() {
+	
+	dmaCopyHalfWords(DMA_CHANNEL,
+                     FondoKratosBitmap, /* Variable que se genera automaticamente */
+                     (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
+                     FondoKratosBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }
 
 void visualizarPuertaAbierta() {

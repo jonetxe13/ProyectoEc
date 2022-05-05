@@ -63,7 +63,10 @@ fondos.o: /home/julenson/ProyectoEc/ProyectoEc/source/fondos.c \
  /home/julenson/ProyectoEc/ProyectoEc/include/graficos.h \
  /home/julenson/ProyectoEc/ProyectoEc/build/Puerta.h \
  /home/julenson/ProyectoEc/ProyectoEc/build/PuertaAbierta.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/FondoPelea.h
+ /home/julenson/ProyectoEc/ProyectoEc/build/FondoPelea.h \
+ /home/julenson/ProyectoEc/ProyectoEc/build/FondoSonic.h \
+ /home/julenson/ProyectoEc/ProyectoEc/build/FondoGoku.h \
+ /home/julenson/ProyectoEc/ProyectoEc/build/FondoKratos.h
 /opt/devkitpro/libnds/include/nds.h:
 /opt/devkitpro/libnds/include/nds/libversion.h:
 /opt/devkitpro/libnds/include/nds/ndstypes.h:
@@ -129,3 +132,6 @@ fondos.o: /home/julenson/ProyectoEc/ProyectoEc/source/fondos.c \
 /home/julenson/ProyectoEc/ProyectoEc/build/Puerta.h:
 /home/julenson/ProyectoEc/ProyectoEc/build/PuertaAbierta.h:
 /home/julenson/ProyectoEc/ProyectoEc/build/FondoPelea.h:
+/home/julenson/ProyectoEc/ProyectoEc/build/FondoSonic.h:
+/home/julenson/ProyectoEc/ProyectoEc/build/FondoGoku.h:
+/home/julenson/ProyectoEc/ProyectoEc/build/FondoKratos.h:

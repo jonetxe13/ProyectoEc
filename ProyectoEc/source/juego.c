@@ -81,7 +81,7 @@ void juego()
 				iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			}
 			else if(presionada==1 && TeclaDetectada()==0) presionada=0;
-
+			
 			iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			//Rotacion de personajes
 		}

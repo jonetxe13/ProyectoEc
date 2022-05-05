@@ -1,12 +1,12 @@
 
-//{{BLOCK(Puerta)
+//{{BLOCK(FondoGoku)
 
 //======================================================================
 //
-//	Puerta, 256x192@16, 
+//	FondoGoku, 255x191@16, 
 //	Alphabit on.
 //	+ bitmap not compressed
-//	Total size: 98304 = 98304
+//	Total size: 97792 = 97792
 //
 //	Time-stamp: 2022-05-05, 12:10:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.16
@@ -14,12 +14,12 @@
 //
 //======================================================================
 
-#ifndef GRIT_PUERTA_H
-#define GRIT_PUERTA_H
+#ifndef GRIT_FONDOGOKU_H
+#define GRIT_FONDOGOKU_H
 
-#define PuertaBitmapLen 98304
-extern const unsigned int PuertaBitmap[24576];
+#define FondoGokuBitmapLen 97792
+extern const unsigned int FondoGokuBitmap[24448];
 
-#endif // GRIT_PUERTA_H
+#endif // GRIT_FONDOGOKU_H
 
-//}}BLOCK(Puerta)
+//}}BLOCK(FondoGoku)
