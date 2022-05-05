@@ -3,7 +3,6 @@
 	y en otro ejemplo de Jaeden Ameronen
 	---------------------------------------------------------------------------------*/
 
-
 #include <nds.h> 		//librería de la nds
 #include <stdio.h>		//librería de entrada/salida estándar de C
 #include <stdlib.h>		//librería estándar de C para reserva de memoria y conversiones númericas
@@ -49,26 +48,17 @@ void juego()
 		/*******************************PROYECTO*****************************************/
 
 		if(ESTADO == INICIO){
-			if(limpiar = 0){
-				for(int i = 0; i<=20; i++){
-					iprintf("\n\n\n\n\n\n\n\n\n\n");
-				}
-				limpiar = 1;
-			}
+
 			HP1 =100;
 			HP2 =100;
 			//Insertar Portada y Texto(pulsa START para comenzar)
-			iprintf("\x1b[2;2Hestado INICIO");
-			if(TeclaPulsada()==START) ESTADO = SELECCION;	
+			iprintf("\x1b[4;2Hestado INICIO");
+			if(TeclaPulsada()==START) {
+				iprintf("\x1b[2J");
+				ESTADO = SELECCION;	
+			}
 		}	
 		else if(ESTADO == SELECCION){
-			limpiar = 0;
-			if(limpiar = 0){
-				for(int i = 0; i<=20; i++){
-					iprintf("\n\n\n\n\n\n\n\n\n\n");
-				}
-				limpiar = 1;
-			}
 			HP1 =100;
 			HP2 =100;
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
@@ -97,13 +87,6 @@ void juego()
 		}
 		//Insertar Personajes
 		else if(ESTADO == PELEA){
-			limpiar = 0;
-			if(limpiar = 0){
-				for(int i = 0; i<=20; i++){
-					iprintf("\n\n\n\n\n\n\n\n\n\n");
-				}
-				limpiar = 1;
-			}
 			visualizarPelea();
 			PonerEnMarchaTempo();
 			int ataque;
@@ -133,17 +116,13 @@ void juego()
 				defensa = 2;
 				velocidad = 3;
 			}
-			if(HP1 <= 0 || HP2 <= 0)ESTADO = FIN;
+			if(HP1 <= 0 || HP2 <= 0){
+				iprintf("\x1b[2J");
+				ESTADO = FIN;
+			}
 		}
 
 		else if(ESTADO == FIN){
-			limpiar = 0;
-			if(limpiar = 0){
-				for(int i = 0; i<=20; i++){
-					iprintf("\n\n\n\n\n\n\n\n\n\n");
-				}
-				limpiar = 1;
-			}
 
 			iprintf("\x1b[2;1H Se ha acabado la partida");
 			if(HP1 <= 0) iprintf("\x1b[15;1HGana la IA tonto que no sabes darle a la B xd");

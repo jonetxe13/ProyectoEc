@@ -20,7 +20,10 @@ int player = 0;
 void RutAtencionTeclado (){
 
 	if (ESTADO == SELECCION){		
-		if(TeclaPulsada() == A) ESTADO = PELEA;
+		if(TeclaPulsada() == A) {
+				iprintf("\x1b[2J");
+				ESTADO = PELEA;
+		}
 	}
 	else if (ESTADO == PELEA){	
 		if(player == 0){
@@ -58,7 +61,7 @@ void RutAtencionTempo()
 			if (ESTADO == PELEA)
 			{
 				if(player != 0){
-					if(seg == 3){
+					if(seg == 1){
 						int aleatorio = rand()%2;
 						if(aleatorio == 0){
 							HP1 -= 5; 
@@ -73,10 +76,9 @@ void RutAtencionTempo()
 				seg3++;
 				if (seg3==100)
 				{
+					iprintf("\x1b[2J");
 					seg3=0;
 					ESTADO=FIN;
-					BorrarRombo(1, 5, 5);
-					BorrarRomboGrande(2, 100, 100);
 				}
 			}
 
