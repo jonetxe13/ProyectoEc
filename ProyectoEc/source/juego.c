@@ -82,6 +82,16 @@ void juego()
 			}
 			else if(presionada==1 && TeclaDetectada()==0) presionada=0;
 			
+			//Fondos Seleccion
+			if(PERSONAJE == SONIC){
+				visualizarSonic();
+			}
+			else if(PERSONAJE == GOKU){
+				visualizarGoku();
+			}
+			else if(PERSONAJE == KRATOS){
+				visualizarKratos();
+			}
 			iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			//Rotacion de personajes
 		}
