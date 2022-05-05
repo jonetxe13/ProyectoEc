@@ -103,9 +103,8 @@ void juego()
 			int defensa;
 			int velocidad;
 
-			iprintf("\x1b[2;2HEstamos en el PELEA");
-			iprintf("\x1b[15;1HLa vida1: %d", HP1);
-			iprintf("\x1b[17;1HLa vida2: %d", HP2);
+			iprintf("\x1b[5;1Hvida1: %d", HP1);
+			iprintf("\x1b[5;15Hvida2: %d", HP2);
 
 			if( PERSONAJE == SONIC ){
 				iprintf("\x1b[21;5HEl personaje Sonic");
@@ -133,6 +132,7 @@ void juego()
 		}
 
 		else if(ESTADO == FIN){
+			BorrarRombo(126,70,150);
 
 			iprintf("\x1b[2;1H Se ha acabado la partida");
 			if(HP1 <= 0){
