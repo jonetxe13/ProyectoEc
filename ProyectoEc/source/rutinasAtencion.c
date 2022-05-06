@@ -28,18 +28,19 @@ void RutAtencionTeclado (){
 	else if (ESTADO == PELEA){	
 		if(player == 0){
 			if(TeclaPulsada() == A){
-				iprintf("\x1b[2J");
 				HP2 -= 5;
 				player = 1;
+				iprintf("\x1b[2J");
 			}
 			else if(TeclaPulsada() == B){
-				iprintf("\x1b[2J");
 				HP2 -= 20;
 				player = 1;
+				iprintf("\x1b[2J");
 			}
 		}
 	}
 	else if(ESTADO == FIN){
+		player = 0;
 
 		if(TeclaPulsada()==A){
 			iprintf("\x1b[2J");
@@ -59,34 +60,39 @@ void RutAtencionTempo()
 	static int seg=0;
 
 
-	if (ESTADO==PELEA && player == 1)
+	if (ESTADO==PELEA)
 	{
 		tick++; 
 		if (tick==5)
 		{
-			seg++;
 			tick=0;
+			if(player == 1){
+				seg++;
 				if(seg == 2){
 					int aleatorio = rand()%2;
 					if(aleatorio == 0){
-						iprintf("\x1b[2J");
 						HP1 -= 5; 
 						player = 0;
-					}else{ 
 						iprintf("\x1b[2J");
+					}else{ 
 						HP1 -= 20; 
 						player = 0;
+						iprintf("\x1b[2J");
 					}
 					seg = 0;
 				}
+			}
 			seg3++;
-			if (seg3==100)
+			if (seg3==20)
 			{
-				iprintf("\x1b[2J");
 				seg3=0;
 				ESTADO=FIN;
+				iprintf("\x1b[2J");
 			}
 		}
+	}
+	else{
+		seg3 = 0;
 	}
 }
 

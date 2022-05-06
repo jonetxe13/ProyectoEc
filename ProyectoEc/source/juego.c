@@ -54,8 +54,8 @@ void juego()
 			//Insertar Portada y Texto(pulsa START para comenzar)
 			iprintf("\x1b[4;2Hestado INICIO");
 			if(TeclaPulsada()==START) {
-				iprintf("\x1b[2J");
 				ESTADO = SELECCION;	
+				iprintf("\x1b[2J");
 			}
 		}	
 		else if(ESTADO == SELECCION){
@@ -126,8 +126,8 @@ void juego()
 				velocidad = 3;
 			}
 			if(HP1 <= 0 || HP2 <= 0){
-				iprintf("\x1b[2J");
 				ESTADO = FIN;
+				iprintf("\x1b[2J");
 			}
 		}
 
