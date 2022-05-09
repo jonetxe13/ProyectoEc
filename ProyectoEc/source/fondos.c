@@ -9,6 +9,7 @@
 #include "fondos.h"
 #include "graficos.h"
 #include "Puerta.h"
+#include "fondoStart.h"
 #include "PuertaAbierta.h"
 #include "FondoPelea.h"
 #include "FondoSonic.h"
@@ -68,3 +69,10 @@ void visualizarPuertaAbierta() {
                      PuertaAbiertaBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }
 
+void visualizarStart() {
+	
+	dmaCopyHalfWords(DMA_CHANNEL,
+                     fondoStartBitmap, /* Variable que se genera automaticamente */
+                     (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
+                     fondoStartBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+}

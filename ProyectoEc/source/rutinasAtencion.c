@@ -5,6 +5,7 @@
 #include <nds.h>
 #include <stdio.h>
 #include "definiciones.h"
+#include "juego.h"
 #include "perifericos.h"
 #include "fondos.h"
 #include "sprites.h"
@@ -43,13 +44,13 @@ void RutAtencionTeclado (){
 		player = 0;
 
 		if(TeclaPulsada()==A){
-			iprintf("\x1b[2J");
 			ESTADO = SELECCION;
+			iprintf("\x1b[2J");
 		}
 		//Pulsa B para finalizar 
 		else if(TeclaPulsada()==B){
-			iprintf("\x1b[2J");
 			ESTADO = INICIO;
+			iprintf("\x1b[2J");
 		}
 	}
 }
@@ -66,33 +67,28 @@ void RutAtencionTempo()
 		if (tick==5)
 		{
 			tick=0;
-			if(player == 1){
-				seg++;
-				if(seg == 2){
-					int aleatorio = rand()%2;
-					if(aleatorio == 0){
-						HP1 -= 5; 
-						player = 0;
-						iprintf("\x1b[2J");
-					}else{ 
-						HP1 -= 20; 
-						player = 0;
-						iprintf("\x1b[2J");
-					}
-					seg = 0;
-				}
-			}
+			seg++;
 			seg3++;
-			if (seg3==20)
+			if(player == 1 && seg == 2){
+				int aleatorio = rand()%2;
+				if(aleatorio == 0){
+					HP1 -= 5; 
+					player = 0;
+					iprintf("\x1b[2J");
+				}else{ 
+					HP1 -= 20; 
+					player = 0;
+					iprintf("\x1b[2J");
+				}
+				seg = 0;
+			}
+			if (seg3==50)
 			{
 				seg3=0;
 				ESTADO=FIN;
 				iprintf("\x1b[2J");
 			}
 		}
-	}
-	else{
-		seg3 = 0;
 	}
 }
 

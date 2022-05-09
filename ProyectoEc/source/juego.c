@@ -14,6 +14,7 @@
 #include "perifericos.h"
 #include "rutinasAtencion.h"
 #include "fondos.h"
+#include "fondosSeleccion.h"
 
 int tiempo;
 
@@ -48,6 +49,7 @@ void juego()
 		/*******************************PROYECTO*****************************************/
 
 		if(ESTADO == INICIO){
+			visualizarStart();
 
 			HP1 =100;
 			HP2 =100;
@@ -59,12 +61,19 @@ void juego()
 			}
 		}	
 		else if(ESTADO == SELECCION){
-			HP1 =100;
-			HP2 =100;
+			touchPosition posPantalla;
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
-			iprintf("\x1b[2;2Hestado SELECCION");
+			touchRead(&posPantalla);
+			if(posPantalla.px < 90 && posPantalla.px > 20){
+				PERSONAJE += 1;
+				if(PERSONAJE<0) PERSONAJE=2;
+				else if(PERSONAJE>2) PERSONAJE=0;
+				iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
+			}
+
 
 			if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
+				iprintf("\x1b[2J");
 				presionada=1;
 				PERSONAJE-=1;
 				if(PERSONAJE<0) PERSONAJE=2;
@@ -73,27 +82,21 @@ void juego()
 				iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			}
 			else if(TeclaDetectada() && TeclaPulsada()==R && presionada==0){
+				iprintf("\x1b[2J");
 				presionada=1;
 				PERSONAJE+=1;
 				if(PERSONAJE<0) PERSONAJE=2;
 				else if(PERSONAJE>2) PERSONAJE=0;
 
-				iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			}
-			else if(presionada==1 && TeclaDetectada()==0) presionada=0;
-			
-			//Fondos Seleccion
-			if(PERSONAJE == SONIC){
-				visualizarSonic();
+			else if(presionada==1 && TeclaDetectada()==0) {
+				iprintf("\x1b[2J");
+				presionada=0;
 			}
-			else if(PERSONAJE == GOKU){
-				visualizarGoku();
-			}
-			else if(PERSONAJE == KRATOS){
-				visualizarKratos();
-				MostrarPouAsesino(126,95,75);
-			}
-			iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
+
+			fondosSeleccion();
+
+			iprintf("\x1b[7;2HEl personaje es %s", personaje);
 			//Rotacion de personajes
 		}
 		//Insertar Personajes
@@ -104,28 +107,29 @@ void juego()
 			int defensa;
 			int velocidad;
 
-			iprintf("\x1b[5;1Hvida1: %d", HP1);
-			iprintf("\x1b[5;15Hvida2: %d", HP2);
 
 			if( PERSONAJE == SONIC ){
-				iprintf("\x1b[21;5HEl personaje Sonic");
 				ataque = 2;
 				defensa = 3;
 				velocidad = 2;
 				MostrarSonic(126,70,150);
 			}
 			else if( PERSONAJE == GOKU ){
-				iprintf("\x1b[21;5HEl personaje Goku");
 				ataque = 3;
 				defensa = 2;
 				velocidad = 2;
 			}
 			else if( PERSONAJE == KRATOS ){
-				iprintf("\x1b[21;5HEl personaje Kratos");
 				ataque = 2;
 				defensa = 2;
 				velocidad = 3;
+				MostrarPouAsesino(126,40,140);
 			}
+
+			iprintf("\x1b[5;1H%s", personaje); iprintf("\x1b[5;7H:%d", HP1);
+
+			iprintf("\x1b[5;15Hvida2: %d", HP2);
+
 			if(HP1 <= 0 || HP2 <= 0){
 				ESTADO = FIN;
 				iprintf("\x1b[2J");
@@ -142,7 +146,6 @@ void juego()
 			else if(HP2 <= 0){
 				iprintf("\x1b[17;1HGanas tu, sabes darle a la B xd");
 			}
-			//Pulsa A para volver a la selccion de personaje
 		}
 	}
 }
