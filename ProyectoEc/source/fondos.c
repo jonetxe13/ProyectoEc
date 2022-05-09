@@ -9,12 +9,12 @@
 #include "fondos.h"
 #include "graficos.h"
 #include "Puerta.h"
-#include "fondoStart.h"
+#include "Derrota.h"
 #include "PuertaAbierta.h"
 #include "FondoPelea.h"
-#include "FondoSonic.h"
-#include "FondoGoku.h"
-#include "FondoKratos.h"
+#include "Victoria.h"
+#include "Inicio.h"
+#include "Seleccion.h"
 
 /* Se elige el canal de DMA que se utilizará para copiar las imágenes en memoria.*/
 static const int DMA_CHANNEL = 3;
@@ -37,28 +37,28 @@ void visualizarPelea() {
                      FondoPeleaBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }
 
-void visualizarSonic() {
+void visualizarInicio() {
 	
 	dmaCopyHalfWords(DMA_CHANNEL,
-                     FondoSonicBitmap, /* Variable que se genera automaticamente */
+                     InicioBitmap, /* Variable que se genera automaticamente */
                      (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
-                     FondoSonicBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+                     InicioBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }
 
-void visualizarGoku() {
+void visualizarSeleccion() {
 	
 	dmaCopyHalfWords(DMA_CHANNEL,
-                     FondoGokuBitmap, /* Variable que se genera automaticamente */
+                     SeleccionBitmap, /* Variable que se genera automaticamente */
                      (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
-                     FondoGokuBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+                     SeleccionBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }
 
-void visualizarKratos() {
+void visualizarVictoria() {
 	
 	dmaCopyHalfWords(DMA_CHANNEL,
-                     FondoKratosBitmap, /* Variable que se genera automaticamente */
+                     VictoriaBitmap, /* Variable que se genera automaticamente */
                      (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
-                     FondoKratosBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+                     VictoriaBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }
 
 void visualizarPuertaAbierta() {
@@ -69,10 +69,10 @@ void visualizarPuertaAbierta() {
                      PuertaAbiertaBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }
 
-void visualizarStart() {
+void visualizarDerrota() {
 	
 	dmaCopyHalfWords(DMA_CHANNEL,
-                     fondoStartBitmap, /* Variable que se genera automaticamente */
+                     DerrotaBitmap, /* Variable que se genera automaticamente */
                      (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
-                     fondoStartBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+                     DerrotaBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }

@@ -49,7 +49,7 @@ void juego()
 		/*******************************PROYECTO*****************************************/
 
 		if(ESTADO == INICIO){
-			visualizarStart();
+			visualizarInicio();
 
 			HP1 =100;
 			HP2 =100;
@@ -61,6 +61,7 @@ void juego()
 			}
 		}	
 		else if(ESTADO == SELECCION){
+			visualizarSeleccion();
 			touchPosition posPantalla;
 			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
 			touchRead(&posPantalla);
@@ -142,9 +143,11 @@ void juego()
 			iprintf("\x1b[2;1H Se ha acabado la partida");
 			if(HP1 <= 0){
 				iprintf("\x1b[15;1HGana la IA tonto que no sabes darle a la B xd");
+				visualizarDerrota();
 			}
 			else if(HP2 <= 0){
 				iprintf("\x1b[17;1HGanas tu, sabes darle a la B xd");
+				visualizarVictoria();
 			}
 		}
 	}

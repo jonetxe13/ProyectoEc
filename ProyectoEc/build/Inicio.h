@@ -1,25 +1,25 @@
 
-//{{BLOCK(fondoStart)
+//{{BLOCK(Inicio)
 
 //======================================================================
 //
-//	fondoStart, 255x191@16, 
+//	Inicio, 256x191@16, 
 //	Alphabit on.
 //	+ bitmap not compressed
 //	Total size: 97792 = 97792
 //
-//	Time-stamp: 2022-05-09, 21:27:34
+//	Time-stamp: 2022-05-09, 23:26:18
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.16
 //	( http://www.coranac.com/projects/#grit )
 //
 //======================================================================
 
-#ifndef GRIT_FONDOSTART_H
-#define GRIT_FONDOSTART_H
+#ifndef GRIT_INICIO_H
+#define GRIT_INICIO_H
 
-#define fondoStartBitmapLen 97792
-extern const unsigned int fondoStartBitmap[24448];
+#define InicioBitmapLen 97792
+extern const unsigned int InicioBitmap[24448];
 
-#endif // GRIT_FONDOSTART_H
+#endif // GRIT_INICIO_H
 
-//}}BLOCK(fondoStart)
+//}}BLOCK(Inicio)

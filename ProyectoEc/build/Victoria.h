@@ -1,25 +1,25 @@
 
-//{{BLOCK(FondoGoku)
+//{{BLOCK(Victoria)
 
 //======================================================================
 //
-//	FondoGoku, 255x191@16, 
+//	Victoria, 256x191@16, 
 //	Alphabit on.
 //	+ bitmap not compressed
 //	Total size: 97792 = 97792
 //
-//	Time-stamp: 2022-05-09, 21:27:33
+//	Time-stamp: 2022-05-09, 23:26:18
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.16
 //	( http://www.coranac.com/projects/#grit )
 //
 //======================================================================
 
-#ifndef GRIT_FONDOGOKU_H
-#define GRIT_FONDOGOKU_H
+#ifndef GRIT_VICTORIA_H
+#define GRIT_VICTORIA_H
 
-#define FondoGokuBitmapLen 97792
-extern const unsigned int FondoGokuBitmap[24448];
+#define VictoriaBitmapLen 97792
+extern const unsigned int VictoriaBitmap[24448];
 
-#endif // GRIT_FONDOGOKU_H
+#endif // GRIT_VICTORIA_H
 
-//}}BLOCK(FondoGoku)
+//}}BLOCK(Victoria)
