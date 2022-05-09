@@ -62,17 +62,17 @@ void juego()
 		}	
 		else if(ESTADO == SELECCION){
 			visualizarSeleccion();
+
+			//prueba de tactil *no va bn tamos en ello*
 			touchPosition posPantalla;
-			//Insertar PERSONAJE y Texto(pulsa A para confirmar)
 			touchRead(&posPantalla);
 			if(posPantalla.px < 90 && posPantalla.px > 20){
 				PERSONAJE += 1;
 				if(PERSONAJE<0) PERSONAJE=2;
 				else if(PERSONAJE>2) PERSONAJE=0;
-				iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			}
 
-
+			//seleccionar personaje con la L y con la R
 			if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
 				iprintf("\x1b[2J");
 				presionada=1;
@@ -80,7 +80,6 @@ void juego()
 				if(PERSONAJE<0) PERSONAJE=2;
 				else if(PERSONAJE>2) PERSONAJE=0;
 
-				iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			}
 			else if(TeclaDetectada() && TeclaPulsada()==R && presionada==0){
 				iprintf("\x1b[2J");

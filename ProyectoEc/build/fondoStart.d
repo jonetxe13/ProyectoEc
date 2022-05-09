@@ -1,0 +1,1 @@
+fondoStart.o: fondoStart.s

@@ -67,21 +67,23 @@ void RutAtencionTempo()
 		if (tick==5)
 		{
 			tick=0;
-			seg++;
-			seg3++;
-			if(player == 1 && seg == 2){
-				int aleatorio = rand()%2;
-				if(aleatorio == 0){
-					HP1 -= 5; 
-					player = 0;
-					iprintf("\x1b[2J");
-				}else{ 
-					HP1 -= 20; 
-					player = 0;
-					iprintf("\x1b[2J");
+			if(player == 1){
+				seg++;
+				if(seg == 2){
+					int aleatorio = rand()%2;
+					if(aleatorio == 0){
+						HP1 -= 5; 
+						player = 0;
+						iprintf("\x1b[2J");
+					}else{ 
+						HP1 -= 20; 
+						player = 0;
+						iprintf("\x1b[2J");
+					}
+					seg = 0;
 				}
-				seg = 0;
 			}
+			seg3++;
 			if (seg3==50)
 			{
 				seg3=0;

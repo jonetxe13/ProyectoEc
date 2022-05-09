@@ -1,0 +1,1 @@
+FondoKratos.o: FondoKratos.s
