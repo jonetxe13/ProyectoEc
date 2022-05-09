@@ -91,6 +91,7 @@ void juego()
 			}
 			else if(PERSONAJE == KRATOS){
 				visualizarKratos();
+				MostrarPouAsesino(126,95,75);
 			}
 			iprintf("\x1b[7;2HEl personaje es%d", PERSONAJE);
 			//Rotacion de personajes
