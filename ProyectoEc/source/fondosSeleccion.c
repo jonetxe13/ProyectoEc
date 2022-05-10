@@ -17,12 +17,15 @@ void fondosSeleccion(){
     if(PERSONAJE == SONIC){
         BorrarPouAsesino(126,111,79);
         strcpy(personaje, "sonic");
+        MostrarSonic(126,111,79);
     }
     else if(PERSONAJE == GOKU){
+        BorrarSonic(126,111,79);
         BorrarPouAsesino(126,111,79);
         strcpy(personaje, "goku");
     }
     else if(PERSONAJE == KRATOS){
+        BorrarSonic(126,111,79);
         strcpy(personaje, "pou");
         MostrarPouAsesino(126,111,79);
     }

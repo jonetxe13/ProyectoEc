@@ -117,7 +117,7 @@ void juego()
 				ataque = 2;
 				defensa = 3;
 				velocidad = 2;
-				MostrarSonic(126,70,150);
+				MostrarSonic(126,40,140);
 			}
 			else if( PERSONAJE == GOKU ){
 				ataque = 3;
