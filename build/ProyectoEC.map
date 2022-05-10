@@ -51,7 +51,7 @@ Archive member included to satisfy reference by file (symbol)
 /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-init.o)
                               /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o (__libc_init_array)
 /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iprintf.o)
-                              rutinasAtencion.o (iprintf)
+                              juego.o (iprintf)
 /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-malloc.o)
                               /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o) (malloc)
 /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mallocr.o)
@@ -235,14 +235,14 @@ Discarded input sections
  .text          0x0000000000000000        0x0 Puerta.o
  .data          0x0000000000000000        0x0 Puerta.o
  .bss           0x0000000000000000        0x0 Puerta.o
- .data          0x0000000000000000        0x0 graficos.o
- .bss           0x0000000000000000        0x0 graficos.o
- .data          0x0000000000000000        0x0 rutinasAtencion.o
- .data          0x0000000000000000        0x0 perifericos.o
- .data          0x0000000000000000        0x0 juego.o
  .text          0x0000000000000000        0x0 main.o
  .data          0x0000000000000000        0x0 main.o
  .bss           0x0000000000000000        0x0 main.o
+ .data          0x0000000000000000        0x0 graficos.o
+ .bss           0x0000000000000000        0x0 graficos.o
+ .data          0x0000000000000000        0x0 perifericos.o
+ .data          0x0000000000000000        0x0 juego.o
+ .data          0x0000000000000000        0x0 rutinasAtencion.o
  .data          0x0000000000000000        0x0 fondos.o
  .bss           0x0000000000000000        0x0 fondos.o
  .text          0x0000000000000000        0x0 /opt/devkitpro/libnds/lib/libnds9.a(video.o)
@@ -977,31 +977,31 @@ Linker script and memory map
                 0x0000000002000c1c                inicializarGraficos
                 0x0000000002000c78                initSpriteMem
                 0x0000000002000c98                inicializarGraficosSprites
- .text          0x0000000002000d20       0xcc rutinasAtencion.o
-                0x0000000002000d20                RutAtencionTeclado
-                0x0000000002000d6c                RutAtencionTempo
-                0x0000000002000dcc                EstablecerVectorInt
- .text          0x0000000002000dec      0x1cc sprites.o
-                0x0000000002000dec                memoriaReserba
-                0x0000000002000e1c                EstablecerPaletaPrincipal
-                0x0000000002000e40                GuardarSpritesMemoria
-                0x0000000002000e88                MostrarRombo
-                0x0000000002000ed4                BorrarRombo
-                0x0000000002000f20                MostrarRomboGrande
-                0x0000000002000f6c                BorrarRomboGrande
- .text          0x0000000002000fb8      0x1b0 perifericos.o
-                0x0000000002000fb8                TeclaDetectada
-                0x0000000002000fcc                TeclaPulsada
-                0x0000000002001090                ConfigurarTeclado
-                0x00000000020010a4                ConfigurarTemporizador
-                0x00000000020010c4                HabilitarIntTeclado
-                0x00000000020010e4                InhibirIntTeclado
-                0x0000000002001108                HabilitarIntTempo
-                0x0000000002001128                InhibirIntTempo
-                0x0000000002001148                PonerEnMarchaTempo
-                0x0000000002001158                PararTempo
- .text          0x0000000002001168       0xac juego.o
-                0x0000000002001168                juego
+ .text          0x0000000002000d20      0x1cc sprites.o
+                0x0000000002000d20                memoriaReserba
+                0x0000000002000d50                EstablecerPaletaPrincipal
+                0x0000000002000d74                GuardarSpritesMemoria
+                0x0000000002000dbc                MostrarRombo
+                0x0000000002000e08                BorrarRombo
+                0x0000000002000e54                MostrarRomboGrande
+                0x0000000002000ea0                BorrarRomboGrande
+ .text          0x0000000002000eec      0x1b0 perifericos.o
+                0x0000000002000eec                TeclaDetectada
+                0x0000000002000f00                TeclaPulsada
+                0x0000000002000fc4                ConfigurarTeclado
+                0x0000000002000fd8                ConfigurarTemporizador
+                0x0000000002000ff8                HabilitarIntTeclado
+                0x0000000002001018                InhibirIntTeclado
+                0x000000000200103c                HabilitarIntTempo
+                0x000000000200105c                InhibirIntTempo
+                0x000000000200107c                PonerEnMarchaTempo
+                0x000000000200108c                PararTempo
+ .text          0x000000000200109c       0xac juego.o
+                0x000000000200109c                juego
+ .text          0x0000000002001148       0xcc rutinasAtencion.o
+                0x0000000002001148                RutAtencionTeclado
+                0x0000000002001194                RutAtencionTempo
+                0x00000000020011f4                EstablecerVectorInt
  .text          0x0000000002001214       0x60 fondos.o
                 0x0000000002001214                visualizarPuerta
                 0x0000000002001244                visualizarPuertaAbierta
@@ -1451,10 +1451,10 @@ Linker script and memory map
  *(EXCLUDE_FILE(*.twl*) .roda)
  *(EXCLUDE_FILE(*.twl*) .rodata.*)
  .rodata.str1.4
-                0x000000000203a7fc       0x5a rutinasAtencion.o
- *fill*         0x000000000203a856        0x2 ff
+                0x000000000203a7fc       0x7e juego.o
+ *fill*         0x000000000203a87a        0x2 ff
  .rodata.str1.4
-                0x000000000203a858       0x7e juego.o
+                0x000000000203a87c       0x5a rutinasAtencion.o
  *fill*         0x000000000203a8d6        0x2 ff
  .rodata.con_write.str1.4
                 0x000000000203a8d8       0x30 /opt/devkitpro/libnds/lib/libnds9.a(console.o)
@@ -1718,16 +1718,16 @@ ARM.exidx
                 0x0000000002045724        0x1 /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/thumb/crtbegin.o
  *fill*         0x0000000002045725        0x3 
  .bss.object.0  0x0000000002045728       0x18 /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/thumb/crtbegin.o
- .bss           0x0000000002045740       0x10 rutinasAtencion.o
-                0x0000000002045740                ESTADO
-                0x0000000002045744                seg3
- .bss           0x0000000002045750        0x8 sprites.o
-                0x0000000002045750                gfxrombo
-                0x0000000002045754                gfxromboGrande
- .bss           0x0000000002045758        0x4 perifericos.o
-                0x0000000002045758                tecla
- .bss           0x000000000204575c        0x4 juego.o
-                0x000000000204575c                tiempo
+ .bss           0x0000000002045740        0x8 sprites.o
+                0x0000000002045740                gfxrombo
+                0x0000000002045744                gfxromboGrande
+ .bss           0x0000000002045748        0x4 perifericos.o
+                0x0000000002045748                tecla
+ .bss           0x000000000204574c        0x4 juego.o
+                0x000000000204574c                tiempo
+ .bss           0x0000000002045750       0x10 rutinasAtencion.o
+                0x0000000002045750                ESTADO
+                0x0000000002045754                seg3
  .bss.SDcallback
                 0x0000000002045760        0x4 /opt/devkitpro/libnds/lib/libnds9.a(system.o)
  .bss.currentCopy
@@ -1863,12 +1863,12 @@ ARM.exidx
  *(.comment)
  .comment       0x0000000000000000       0x23 /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/thumb/crtbegin.o
                                          0x24 (size before relaxing)
+ .comment       0x0000000000000023       0x24 main.o
  .comment       0x0000000000000023       0x24 graficos.o
- .comment       0x0000000000000023       0x24 rutinasAtencion.o
  .comment       0x0000000000000023       0x24 sprites.o
  .comment       0x0000000000000023       0x24 perifericos.o
  .comment       0x0000000000000023       0x24 juego.o
- .comment       0x0000000000000023       0x24 main.o
+ .comment       0x0000000000000023       0x24 rutinasAtencion.o
  .comment       0x0000000000000023       0x24 fondos.o
  .comment       0x0000000000000023       0x24 /opt/devkitpro/libnds/lib/libnds9.a(video.o)
  .comment       0x0000000000000023       0x24 /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o)
@@ -1960,9 +1960,9 @@ ARM.exidx
  .ARM.attributes
                 0x0000000000000081       0x1a Puerta.o
  .ARM.attributes
-                0x000000000000009b       0x27 graficos.o
+                0x000000000000009b       0x27 main.o
  .ARM.attributes
-                0x00000000000000c2       0x27 rutinasAtencion.o
+                0x00000000000000c2       0x27 graficos.o
  .ARM.attributes
                 0x00000000000000e9       0x27 sprites.o
  .ARM.attributes
@@ -1970,7 +1970,7 @@ ARM.exidx
  .ARM.attributes
                 0x0000000000000137       0x27 juego.o
  .ARM.attributes
-                0x000000000000015e       0x27 main.o
+                0x000000000000015e       0x27 rutinasAtencion.o
  .ARM.attributes
                 0x0000000000000185       0x27 fondos.o
  .ARM.attributes
@@ -2177,9 +2177,9 @@ ARM.exidx
 .debug_aranges  0x0000000000000000      0x670
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x20 graficos.o
+                0x0000000000000000       0x20 main.o
  .debug_aranges
-                0x0000000000000020       0x20 rutinasAtencion.o
+                0x0000000000000020       0x20 graficos.o
  .debug_aranges
                 0x0000000000000040       0x20 sprites.o
  .debug_aranges
@@ -2187,7 +2187,7 @@ ARM.exidx
  .debug_aranges
                 0x0000000000000080       0x20 juego.o
  .debug_aranges
-                0x00000000000000a0       0x20 main.o
+                0x00000000000000a0       0x20 rutinasAtencion.o
  .debug_aranges
                 0x00000000000000c0       0x20 fondos.o
  .debug_aranges
@@ -2234,12 +2234,12 @@ ARM.exidx
 
 .debug_info     0x0000000000000000     0xe6bd
  *(.debug_info)
- .debug_info    0x0000000000000000     0x13d6 graficos.o
- .debug_info    0x00000000000013d6      0x762 rutinasAtencion.o
- .debug_info    0x0000000000001b38      0xdda sprites.o
- .debug_info    0x0000000000002912      0x56b perifericos.o
- .debug_info    0x0000000000002e7d      0x66e juego.o
- .debug_info    0x00000000000034eb      0x3c7 main.o
+ .debug_info    0x0000000000000000      0x3c7 main.o
+ .debug_info    0x00000000000003c7     0x13d6 graficos.o
+ .debug_info    0x000000000000179d      0xdda sprites.o
+ .debug_info    0x0000000000002577      0x56b perifericos.o
+ .debug_info    0x0000000000002ae2      0x66e juego.o
+ .debug_info    0x0000000000003150      0x762 rutinasAtencion.o
  .debug_info    0x00000000000038b2      0x4b5 fondos.o
  .debug_info    0x0000000000003d67      0x790 /opt/devkitpro/libnds/lib/libnds9.a(video.o)
  .debug_info    0x00000000000044f7     0x1cb1 /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o)
@@ -2263,12 +2263,12 @@ ARM.exidx
 
 .debug_abbrev   0x0000000000000000     0x360b
  *(.debug_abbrev)
- .debug_abbrev  0x0000000000000000      0x38d graficos.o
- .debug_abbrev  0x000000000000038d      0x285 rutinasAtencion.o
- .debug_abbrev  0x0000000000000612      0x2e0 sprites.o
- .debug_abbrev  0x00000000000008f2      0x1ab perifericos.o
- .debug_abbrev  0x0000000000000a9d      0x218 juego.o
- .debug_abbrev  0x0000000000000cb5      0x132 main.o
+ .debug_abbrev  0x0000000000000000      0x132 main.o
+ .debug_abbrev  0x0000000000000132      0x38d graficos.o
+ .debug_abbrev  0x00000000000004bf      0x2e0 sprites.o
+ .debug_abbrev  0x000000000000079f      0x1ab perifericos.o
+ .debug_abbrev  0x000000000000094a      0x218 juego.o
+ .debug_abbrev  0x0000000000000b62      0x285 rutinasAtencion.o
  .debug_abbrev  0x0000000000000de7      0x1b1 fondos.o
  .debug_abbrev  0x0000000000000f98      0x24c /opt/devkitpro/libnds/lib/libnds9.a(video.o)
  .debug_abbrev  0x00000000000011e4      0x3b5 /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o)
@@ -2292,12 +2292,12 @@ ARM.exidx
 
 .debug_line     0x0000000000000000     0x8711
  *(.debug_line)
- .debug_line    0x0000000000000000      0x4dd graficos.o
- .debug_line    0x00000000000004dd      0x2f6 rutinasAtencion.o
- .debug_line    0x00000000000007d3      0x29d sprites.o
- .debug_line    0x0000000000000a70      0x341 perifericos.o
- .debug_line    0x0000000000000db1      0x29d juego.o
- .debug_line    0x000000000000104e      0x1b3 main.o
+ .debug_line    0x0000000000000000      0x1b3 main.o
+ .debug_line    0x00000000000001b3      0x4dd graficos.o
+ .debug_line    0x0000000000000690      0x29d sprites.o
+ .debug_line    0x000000000000092d      0x341 perifericos.o
+ .debug_line    0x0000000000000c6e      0x29d juego.o
+ .debug_line    0x0000000000000f0b      0x2f6 rutinasAtencion.o
  .debug_line    0x0000000000001201      0x214 fondos.o
  .debug_line    0x0000000000001415      0x4b5 /opt/devkitpro/libnds/lib/libnds9.a(video.o)
  .debug_line    0x00000000000018ca     0x1736 /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o)
@@ -2321,12 +2321,12 @@ ARM.exidx
 
 .debug_frame    0x0000000000000000      0xd10
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x88 graficos.o
- .debug_frame   0x0000000000000088       0x60 rutinasAtencion.o
- .debug_frame   0x00000000000000e8       0xd0 sprites.o
- .debug_frame   0x00000000000001b8       0xb0 perifericos.o
- .debug_frame   0x0000000000000268       0x34 juego.o
- .debug_frame   0x000000000000029c       0x28 main.o
+ .debug_frame   0x0000000000000000       0x28 main.o
+ .debug_frame   0x0000000000000028       0x88 graficos.o
+ .debug_frame   0x00000000000000b0       0xd0 sprites.o
+ .debug_frame   0x0000000000000180       0xb0 perifericos.o
+ .debug_frame   0x0000000000000230       0x34 juego.o
+ .debug_frame   0x0000000000000264       0x60 rutinasAtencion.o
  .debug_frame   0x00000000000002c4       0x30 fondos.o
  .debug_frame   0x00000000000002f4       0xbc /opt/devkitpro/libnds/lib/libnds9.a(video.o)
  .debug_frame   0x00000000000003b0       0x9c /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o)
@@ -2342,18 +2342,18 @@ ARM.exidx
 
 .debug_str      0x0000000000000000     0x3c88
  *(.debug_str)
- .debug_str     0x0000000000000000     0x11a9 graficos.o
-                                       0x124c (size before relaxing)
- .debug_str     0x00000000000011a9      0x212 rutinasAtencion.o
-                                        0x63b (size before relaxing)
- .debug_str     0x00000000000013bb      0x199 sprites.o
-                                        0x91a (size before relaxing)
- .debug_str     0x0000000000001554       0xfe perifericos.o
-                                        0x546 (size before relaxing)
- .debug_str     0x0000000000001652       0x3f juego.o
-                                        0x546 (size before relaxing)
- .debug_str     0x0000000000001691       0x2e main.o
+ .debug_str     0x0000000000000000      0x35a main.o
                                         0x3b7 (size before relaxing)
+ .debug_str     0x000000000000035a      0xe8b graficos.o
+                                       0x124c (size before relaxing)
+ .debug_str     0x00000000000011e5      0x1d7 sprites.o
+                                        0x91a (size before relaxing)
+ .debug_str     0x00000000000013bc      0x103 perifericos.o
+                                        0x546 (size before relaxing)
+ .debug_str     0x00000000000014bf       0x6d juego.o
+                                        0x546 (size before relaxing)
+ .debug_str     0x000000000000152c      0x193 rutinasAtencion.o
+                                        0x63b (size before relaxing)
  .debug_str     0x00000000000016bf       0x76 fondos.o
                                         0x427 (size before relaxing)
  .debug_str     0x0000000000001735      0x5d8 /opt/devkitpro/libnds/lib/libnds9.a(video.o)
@@ -2422,12 +2422,12 @@ LOAD /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/thumb/crtbegin
 LOAD soundbank.bin.o
 LOAD PuertaAbierta.o
 LOAD Puerta.o
+LOAD main.o
 LOAD graficos.o
-LOAD rutinasAtencion.o
 LOAD sprites.o
 LOAD perifericos.o
 LOAD juego.o
-LOAD main.o
+LOAD rutinasAtencion.o
 LOAD fondos.o
 LOAD /opt/devkitpro/libnds/lib/libmm9.a
 LOAD /opt/devkitpro/libnds/lib/libnds9.a
@@ -2441,6 +2441,45 @@ LOAD /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/thumb/crtend.o
 LOAD /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/thumb/crtn.o
 OUTPUT(/home/jonetxe13/ProyectoEC/ProyectoEC.elf elf32-littlearm)
 LOAD linker stubs
+
+.debug_rnglists
+                0x0000000000000000     0x1095
+ .debug_rnglists
+                0x0000000000000000       0x13 main.o
+ .debug_rnglists
+                0x0000000000000013       0x66 graficos.o
+ .debug_rnglists
+                0x0000000000000079       0x14 juego.o
+ .debug_rnglists
+                0x000000000000008d       0x3e /opt/devkitpro/libnds/lib/libnds9.a(video.o)
+ .debug_rnglists
+                0x00000000000000cb      0x788 /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o)
+ .debug_rnglists
+                0x0000000000000853       0x49 /opt/devkitpro/libnds/lib/libnds9.a(system.o)
+ .debug_rnglists
+                0x000000000000089c      0x20e /opt/devkitpro/libnds/lib/libnds9.a(console.o)
+ .debug_rnglists
+                0x0000000000000aaa       0x7b /opt/devkitpro/libnds/lib/libnds9.a(sprite.o)
+ .debug_rnglists
+                0x0000000000000b25       0x20 /opt/devkitpro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_rnglists
+                0x0000000000000b45       0x8b /opt/devkitpro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_rnglists
+                0x0000000000000bd0       0x19 /opt/devkitpro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_rnglists
+                0x0000000000000be9      0x2a4 /opt/devkitpro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_rnglists
+                0x0000000000000e8d       0x25 /opt/devkitpro/libnds/lib/libnds9.a(dcache.o)
+ .debug_rnglists
+                0x0000000000000eb2       0x20 /opt/devkitpro/libnds/lib/libnds9.a(mpu_setup.o)
+ .debug_rnglists
+                0x0000000000000ed2       0x19 /opt/devkitpro/libnds/lib/libnds9.a(IntrWait.o)
+ .debug_rnglists
+                0x0000000000000eeb       0x91 /opt/devkitpro/libnds/lib/libnds9.a(biosCalls.o)
+ .debug_rnglists
+                0x0000000000000f7c       0x7c /opt/devkitpro/libnds/lib/libnds9.a(background.o)
+ .debug_rnglists
+                0x0000000000000ff8       0x9d /opt/devkitpro/libnds/lib/libnds9.a(trig.o)
 
 .debug_loclists
                 0x0000000000000000     0x47a5
@@ -2472,45 +2511,6 @@ LOAD linker stubs
                 0x0000000000003d89      0x2a3 /opt/devkitpro/libnds/lib/libnds9.a(background.o)
  .debug_loclists
                 0x000000000000402c      0x779 /opt/devkitpro/libnds/lib/libnds9.a(trig.o)
-
-.debug_rnglists
-                0x0000000000000000     0x1095
- .debug_rnglists
-                0x0000000000000000       0x66 graficos.o
- .debug_rnglists
-                0x0000000000000066       0x14 juego.o
- .debug_rnglists
-                0x000000000000007a       0x13 main.o
- .debug_rnglists
-                0x000000000000008d       0x3e /opt/devkitpro/libnds/lib/libnds9.a(video.o)
- .debug_rnglists
-                0x00000000000000cb      0x788 /opt/devkitpro/libnds/lib/libnds9.a(sprite_alloc.o)
- .debug_rnglists
-                0x0000000000000853       0x49 /opt/devkitpro/libnds/lib/libnds9.a(system.o)
- .debug_rnglists
-                0x000000000000089c      0x20e /opt/devkitpro/libnds/lib/libnds9.a(console.o)
- .debug_rnglists
-                0x0000000000000aaa       0x7b /opt/devkitpro/libnds/lib/libnds9.a(sprite.o)
- .debug_rnglists
-                0x0000000000000b25       0x20 /opt/devkitpro/libnds/lib/libnds9.a(initSystem.o)
- .debug_rnglists
-                0x0000000000000b45       0x8b /opt/devkitpro/libnds/lib/libnds9.a(interrupts.o)
- .debug_rnglists
-                0x0000000000000bd0       0x19 /opt/devkitpro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_rnglists
-                0x0000000000000be9      0x2a4 /opt/devkitpro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_rnglists
-                0x0000000000000e8d       0x25 /opt/devkitpro/libnds/lib/libnds9.a(dcache.o)
- .debug_rnglists
-                0x0000000000000eb2       0x20 /opt/devkitpro/libnds/lib/libnds9.a(mpu_setup.o)
- .debug_rnglists
-                0x0000000000000ed2       0x19 /opt/devkitpro/libnds/lib/libnds9.a(IntrWait.o)
- .debug_rnglists
-                0x0000000000000eeb       0x91 /opt/devkitpro/libnds/lib/libnds9.a(biosCalls.o)
- .debug_rnglists
-                0x0000000000000f7c       0x7c /opt/devkitpro/libnds/lib/libnds9.a(background.o)
- .debug_rnglists
-                0x0000000000000ff8       0x9d /opt/devkitpro/libnds/lib/libnds9.a(trig.o)
 
 .debug_line_str
                 0x0000000000000000      0x177

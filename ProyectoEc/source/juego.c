@@ -51,8 +51,6 @@ void juego()
 		if(ESTADO == INICIO){
 			visualizarInicio();
 
-			HP1 =100;
-			HP2 =100;
 			//Insertar Portada y Texto(pulsa START para comenzar)
 			iprintf("\x1b[4;2Hestado INICIO");
 			if(TeclaPulsada()==START) {
@@ -61,15 +59,22 @@ void juego()
 			}
 		}	
 		else if(ESTADO == SELECCION){
+			HP1 =100;
+			HP2 =100;
+			int tocado = 0;
 			visualizarSeleccion();
 
 			//prueba de tactil *no va bn tamos en ello*
 			touchPosition posPantalla;
-			touchRead(&posPantalla);
-			if(posPantalla.px < 90 && posPantalla.px > 20){
+			if(tocado == 0){
+				touchRead(&posPantalla);
+			if(posPantalla.px < 90 && posPantalla.px > 20 && tocado == 0){
+				iprintf("\x1b[2J");
 				PERSONAJE += 1;
 				if(PERSONAJE<0) PERSONAJE=2;
 				else if(PERSONAJE>2) PERSONAJE=0;
+			}
+				tocado = 1;
 			}
 
 			//seleccionar personaje con la L y con la R
