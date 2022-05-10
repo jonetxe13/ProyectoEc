@@ -2439,7 +2439,7 @@ LOAD /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/../../../../ar
 END GROUP
 LOAD /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/thumb/crtend.o
 LOAD /opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/11.2.0/thumb/crtn.o
-OUTPUT(/home/jonetxe13/ProyectoEC/ProyectoEC.elf elf32-littlearm)
+OUTPUT(/home/jonetxe13/ProyectoEc/ProyectoEc.elf elf32-littlearm)
 LOAD linker stubs
 
 .debug_rnglists

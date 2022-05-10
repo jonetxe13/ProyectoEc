@@ -14,16 +14,16 @@
 #include "perifericos.h"
 #include "rutinasAtencion.h"
 #include "fondos.h"
-#include "fondosSeleccion.h"
+#include "EstadoSeleccion.h"
 
 int tiempo;
+int presionada = 0;
 
 void juego()
 {	
 	//definiciones de variables
 	int i=9;
 	int tecla=0;
-	int presionada = 0; 
 	int limpiar = 0;
 
 	ESTADO=INICIO;
@@ -59,48 +59,9 @@ void juego()
 			}
 		}	
 		else if(ESTADO == SELECCION){
-			HP1 =100;
-			HP2 =100;
-			int tocado = 0;
-			visualizarSeleccion();
 
-			//prueba de tactil *no va bn tamos en ello*
-			touchPosition posPantalla;
-			if(tocado == 0){
-				touchRead(&posPantalla);
-			if(posPantalla.px < 90 && posPantalla.px > 20 && tocado == 0){
-				iprintf("\x1b[2J");
-				PERSONAJE += 1;
-				if(PERSONAJE<0) PERSONAJE=2;
-				else if(PERSONAJE>2) PERSONAJE=0;
-			}
-				tocado = 1;
-			}
-
-			//seleccionar personaje con la L y con la R
-			if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
-				iprintf("\x1b[2J");
-				presionada=1;
-				PERSONAJE-=1;
-				if(PERSONAJE<0) PERSONAJE=2;
-				else if(PERSONAJE>2) PERSONAJE=0;
-
-			}
-			else if(TeclaDetectada() && TeclaPulsada()==R && presionada==0){
-				iprintf("\x1b[2J");
-				presionada=1;
-				PERSONAJE+=1;
-				if(PERSONAJE<0) PERSONAJE=2;
-				else if(PERSONAJE>2) PERSONAJE=0;
-
-			}
-			else if(presionada==1 && TeclaDetectada()==0) {
-				iprintf("\x1b[2J");
-				presionada=0;
-			}
-
-			fondosSeleccion();
-
+			Seleccion();
+			
 			iprintf("\x1b[7;2HEl personaje es %s", personaje);
 			//Rotacion de personajes
 		}

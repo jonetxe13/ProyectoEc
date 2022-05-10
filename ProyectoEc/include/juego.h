@@ -2,4 +2,5 @@
 juego.h
 ---------------------------------------------------------------------------------*/
 void juego();
+extern int presionada;
 extern char personaje[];
