@@ -13,25 +13,28 @@
 
 
 char personaje[10];
+int tocado = 0;
 
 void Seleccion(){
 	HP1 =100;
 	HP2 =100;
-	int tocado = 0;
 	visualizarSeleccion();
 
-	//prueba de tactil *no va bn tamos en ello*
+	//prueba de tactil 
 	touchPosition posPantalla;
-	if(tocado == 0){
-		touchRead(&posPantalla);
-		if(posPantalla.px < 90 && posPantalla.px > 20 && tocado == 0){
+	touchRead(&posPantalla);
+	if(posPantalla.px < 70 && posPantalla.px > 20 && posPantalla.py > 76 && posPantalla.py < 116 && tocado == 0){
 			iprintf("\x1b[2J");
 			PERSONAJE += 1;
 			if(PERSONAJE<0) PERSONAJE=2;
 			else if(PERSONAJE>2) PERSONAJE=0;
-		}
-		tocado = 1;
+			tocado = 1;
 	}
+	else if(tocado == 1 && posPantalla.px == 0 && posPantalla.py == 0){
+			tocado = 0;
+	}
+
+
 
 	//seleccionar personaje con la L y con la R
 	if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
