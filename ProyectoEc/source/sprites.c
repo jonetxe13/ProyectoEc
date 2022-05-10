@@ -14,7 +14,7 @@ adibide batean oinarrituta.
 u16* gfxsonic;
 u16* gfxPouAsesino;
 u16* gfxSonic;
-
+u16* gfxGoku;
 
 /* Reservar memoria para cada sprite que se quiera mostrar en pantalla.*/
 void memoriaReserba()
@@ -23,6 +23,7 @@ void memoriaReserba()
 	gfxsonic = oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
 	gfxPouAsesino=oamAllocateGfx(&oamMain, SpriteSize_32x32, SpriteColorFormat_256Color);
 	gfxSonic=oamAllocateGfx(&oamMain, SpriteSize_32x32, SpriteColorFormat_256Color);
+	gfxGoku=oamAllocateGfx(&oamMain, SpriteSize_32x32, SpriteColorFormat_256Color);
 }
 
 /* A cada uno de los 256 valores que puede tomar un pixel en la PALETA PRINCIPAL
@@ -100,6 +101,58 @@ u8 sonic[256] =
 	0,0,0,0,0,6,1,1,
         3,1,1,6,3,1,1,6,	//	0,0,0,0,0,6,1,1, 3,1,1,6,3,1,1,6,
 };
+u8 Goku[1024] = 
+{
+//Cuadrante1.1
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+//Cuadrante1.2
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	11 ,
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	6 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	6 ,0 ,	0 ,	0 ,	0 ,	0 ,	11 ,	11 ,	6 ,0 ,	0 ,	0 ,	0 ,	6 ,	6 ,	11 ,	11 ,
+//Cuadrante1.3
+0 ,	11 ,	11 ,	11 ,	0 ,	0 ,	11 ,	11 ,11 ,	 9 ,	11 ,	0 ,	0 ,	11 ,	 9 ,	6 ,11 ,	 9 ,	 9 ,	0 ,	6 ,	6 ,	6 ,	6 ,6 ,	6 ,	11 ,	11 ,	6 ,	6 ,	 9,	6 ,
+6 ,	6 ,	6 ,	6 ,	6 ,	11 ,	6 ,	6 ,6 ,	6 ,	11 ,	6 ,	6 ,	11 ,	6 ,	11 ,6 ,	6 ,	6 ,	11 ,	6 ,	6 ,	11 ,	0 ,6 ,	6 ,	6 ,	11 ,	6 ,	6 ,	6 ,	 9 ,
+//Cuadrante1.4
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,11 ,	11 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,11 ,	 9 ,	11 ,	0 ,	0 ,	0 ,	0 ,	0 ,6 ,	 9 ,	 9 ,	11 ,	0 ,	0 ,	0 ,	0 ,
+6 ,	11 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,11 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,11 ,	11 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+//Cuadrante2.1
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	6 ,	6 ,
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	6 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	6 ,	24 ,0 ,	0 ,	0 ,	0 ,	0 ,	6 ,	24 ,	24 ,
+//Cuadrante2.2
+6 ,	6 ,	6 ,	6 ,	6 ,	6 ,	6 ,	6 ,0 ,	0 ,	0 ,	6 ,	6 ,	6 ,	6 ,	6 ,6 ,	6 ,	6 ,	6 ,	6 ,	6 ,	6 ,	24 ,6 ,	11 ,	 9 ,	6 ,	6 ,	24 ,	6 ,	24 ,
+6 ,	6 ,	11 ,	6 ,	6 ,	24 ,	24 ,	24 ,6 ,	6 ,	6 ,	6 ,	12 ,	6 ,	6 ,	24 ,6 ,	24 ,	6 ,	6 ,	12 ,	6 ,	5 ,	6 ,6 ,	6 ,	5 ,	6 ,	12 ,	6 ,	19 ,	5 ,
+//Cuadrante2.3
+6 ,	6 ,	6 ,	6 ,	11 ,	6 ,	6 ,	6 ,6 ,	6 ,	24 ,	6 ,	24 ,	6 ,	6 ,	11 ,6 ,	6 ,	24 ,	24 ,	24 ,	6 ,	11 ,	0 ,24 ,	3 ,	6 ,	24 ,	24 ,	6 ,	0 ,	0 ,
+24 ,	24 ,	24 ,	24 ,	24 ,	6 ,	0 ,	0 ,24 ,	24 ,	6 ,	6 ,	24 ,	6 ,	0 ,	0 ,6 ,	24 ,	24 ,	24 ,	6 ,	6 ,	6 ,	0 ,5 ,	6 ,	6 ,	6 ,	6 ,	5 ,	6 ,	0 ,
+//Cuadrante2.4
+9 ,	11 ,	11 ,	11 ,	0 ,	0 ,	0 ,	0 ,11 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	11 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+//Cuadrante3.1
+0 ,	0 ,	0 ,	0 ,	0 ,	6 ,	24 ,	24 ,0 ,	0 ,	0 ,	0 ,	0 ,	6 ,	24 ,	24 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	6 ,	6 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+//Cuadrante3.2
+6 ,	5 ,	6 ,	6 ,	13 ,	6 ,	19 ,	19 ,6 ,	6 ,	0 ,	6 ,	13 ,	13 ,	6 ,	19 ,0 ,	0 ,	0 ,	6 ,	6 ,	6 ,	6 ,	6 ,0 ,	0 ,	0 ,	0 ,	6 ,	19 ,	5 ,	6 ,
+0 ,	0 ,	0 ,	6 ,	6 ,	6 ,	6 ,	5 ,0 ,	0 ,	0 ,	6 ,	12 ,	12 ,	6 ,	5 ,0 ,	0 ,	6 ,	12 ,	12 ,	12 ,	6 ,	5 ,0 ,	6 ,	12 ,	12 ,	12 ,	12 ,	6 ,	5 ,
+//Cuadrante3.3
+5 ,	5 ,	6 ,	12 ,	6 ,	19 ,	6 ,	6 ,19 ,	6 ,	12 ,	13 ,	6 ,	6 ,	24 ,	6 ,6 ,	12 ,	13 ,	6 ,	6 ,	6 ,	24 ,	6 ,6 ,	6 ,	6 ,	0 ,	0 ,	0 ,	6 ,	24 ,
+5 ,	19 ,	19 ,	6 ,	0 ,	0 ,	0 ,	6 ,19 ,	6 ,	6 ,	6 ,	6 ,	0 ,	0 ,	0 ,6 ,	12 ,	12 ,	12 ,	6 ,	0 ,	0 ,	0 ,6 ,	13 ,	12 ,	12 ,	6 ,	0 ,	0 ,	0 ,
+//Cuadrante3.4
+6 ,	6 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,24 ,	24 ,	6 ,	0 ,	0 ,	0 ,	0 ,	0 ,24 ,	24 ,	6 ,	0 ,	0 ,	0 ,	0 ,	0 ,24 ,	24 ,	6 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+6 ,	6 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+//Cuadrante4.1
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+//Cuadrante4.2
+0 ,	6 ,	12 ,	12 ,	12 ,	13 ,	6 ,	5 ,6 ,	13 ,	12 ,	12 ,	13 ,	13 ,	6 ,	5 ,6 ,	13 ,	13 ,	13 ,	13 ,	6 ,	6 ,	6 ,0 ,	6 ,	6 ,	6 ,	6 ,	6 ,	0 ,	0 ,
+0 ,	11 ,	6 ,	2 ,	6 ,	0 ,	0 ,	0 ,0 ,	11 ,	2 ,	6 ,	6 ,	0 ,	0 ,	0 ,11 ,	6 ,	2 ,	6 ,	6 ,	0 ,	0 ,	0 ,11 ,	6 ,	6 ,	6 ,	0 ,	0 ,	0 ,	0 ,
+//Cuadrante4.3
+6 ,	13 ,	12 ,	12 ,	12 ,	6 ,	0 ,	0 ,6 ,	6 ,	13 ,	12 ,	12 ,	13 ,	6 ,	0 ,6 ,	6 ,	13 ,	13 ,	13 ,	13 ,	6 ,	0 ,0 ,	0 ,	6 ,	6 ,	6 ,	6 ,	11 ,	0 ,
+0 ,	0 ,	6 ,	6 ,	2 ,	6 ,	11 ,	0 ,0 ,	0 ,	0 ,	6 ,	6 ,	2 ,	6 ,	11 ,0 ,	0 ,	0 ,	6 ,	6 ,	2 ,	6 ,	11 ,0 ,	0 ,	0 ,	0 ,	6 ,	6 ,	2 ,	11 ,
+//Cuadrante4.4
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,11 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,	0 ,
+};
+
 u8 Sonic[1024] = 
 {
 //Cuadrante1.1
@@ -222,6 +275,10 @@ int i;
 	for(i = 0; i < 32 * 32 / 2; i++) 
 	{	
 		gfxSonic[i] = Sonic[i*2] | (Sonic[(i*2)+1]<<8);				
+	}
+	for(i = 0; i < 32 * 32 / 2; i++) 
+	{	
+		gfxGoku[i] = Goku[i*2] | (Goku[(i*2)+1]<<8);				
 	}
 }
 
@@ -346,6 +403,49 @@ oamSet(&oamMain, //main graphics engine context
 		SpriteSize_32x32,     
 		SpriteColorFormat_256Color, 
 		gfxSonic,//+16*16/2,                  //pointer to the loaded graphics
+		-1,                  //sprite rotation data  
+		false,               //double the size when rotating?
+		true,			//hide the sprite?
+		false, false, //vflip, hflip
+		false	//apply mosaic
+		); 
+oamUpdate(&oamMain); 
+
+}
+
+void MostrarGoku(int indice, int x, int y)
+{ 
+ 
+oamSet(&oamMain, //main graphics engine context
+		indice,           //oam index (0 to 127)  
+		x, y,   //x and y pixle location of the sprite
+		0,                    //priority, lower renders last (on top)
+		0,					  //this is the palette index if multiple palettes or the alpha value if bmp sprite	
+		SpriteSize_32x32,     
+		SpriteColorFormat_256Color, 
+		gfxGoku,//+16*16/2,                  //pointer to the loaded graphics
+		-1,                  //sprite rotation data  
+		false,               //double the size when rotating?
+		false,			//hide the sprite?
+		false, false, //vflip, hflip
+		false	//apply mosaic
+		); 
+
+	  
+oamUpdate(&oamMain);  
+}
+
+void BorrarGoku(int indice, int x, int y)
+{
+
+oamSet(&oamMain, //main graphics engine context
+		indice,           //oam index (0 to 127)  
+		x, y,   //x and y pixle location of the sprite
+		0,                    //priority, lower renders last (on top)
+		0,					  //this is the palette index if multiple palettes or the alpha value if bmp sprite	
+		SpriteSize_32x32,     
+		SpriteColorFormat_256Color, 
+		gfxGoku,//+16*16/2,                  //pointer to the loaded graphics
 		-1,                  //sprite rotation data  
 		false,               //double the size when rotating?
 		true,			//hide the sprite?

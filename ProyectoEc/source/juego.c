@@ -123,6 +123,7 @@ void juego()
 				ataque = 3;
 				defensa = 2;
 				velocidad = 2;
+				MostrarGoku(126,40,140);
 			}
 			else if( PERSONAJE == KRATOS ){
 				ataque = 2;
