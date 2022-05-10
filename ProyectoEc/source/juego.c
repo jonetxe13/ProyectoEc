@@ -61,7 +61,7 @@ void juego()
 		else if(ESTADO == SELECCION){
 
 			Seleccion();
-			
+
 			iprintf("\x1b[7;2HEl personaje es %s", personaje);
 			//Rotacion de personajes
 		}
@@ -69,28 +69,41 @@ void juego()
 		else if(ESTADO == PELEA){
 			visualizarPelea();
 			PonerEnMarchaTempo();
-			int ataque;
-			int defensa;
-			int velocidad;
+			int enemigoRandom[2] = {0,1,2};
+			int hecho = 0;
+			if(hecho == 0){
+				if( PERSONAJE == SONIC ){
+					for(int i=1;i<3;i++){
+						enemigoRandom[i-1] = enemigoRandom[i];
+					}
+					MostrarSonic(126,40,140);
+				}
+				else if( PERSONAJE == GOKU ){
+					for(int i=2;i<3;i++){
+						enemigoRandom[i-1] = enemigoRandom[i];
+					}
+					MostrarGoku(126,40,140);
+				}
+				else if( PERSONAJE == KRATOS ){
+					for(int i=2;i<3;i++){
+						enemigoRandom[i-1] = enemigoRandom[i];
+					}
+					MostrarPouAsesino(126,40,140);
+				}
 
+				int indiceEnemigoRandom = rand()%2;
+				int enemigo = enemigoRandom[indiceEnemigoRandom];
 
-			if( PERSONAJE == SONIC ){
-				ataque = 2;
-				defensa = 3;
-				velocidad = 2;
-				MostrarSonic(126,40,140);
-			}
-			else if( PERSONAJE == GOKU ){
-				ataque = 3;
-				defensa = 2;
-				velocidad = 2;
-				MostrarGoku(126,40,140);
-			}
-			else if( PERSONAJE == KRATOS ){
-				ataque = 2;
-				defensa = 2;
-				velocidad = 3;
-				MostrarPouAsesino(126,40,140);
+				if(enemigo == SONIC){
+					MostrarSonic(126,174,45);
+				}
+				else if(enemigo == GOKU){
+					MostrarGoku(126,174,45);
+				}
+				else if(enemigo == KRATOS){
+					MostrarPouAsesino(126,174,45);
+				}
+				hecho = 1;
 			}
 
 			iprintf("\x1b[5;1H%s", personaje); iprintf("\x1b[5;7H:%d", HP1);

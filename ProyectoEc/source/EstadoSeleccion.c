@@ -34,8 +34,6 @@ void Seleccion(){
 			tocado = 0;
 	}
 
-
-
 	//seleccionar personaje con la L y con la R
 	if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
 		iprintf("\x1b[2J");
@@ -58,6 +56,7 @@ void Seleccion(){
 		presionada=0;
 	}
 
+
 	if(PERSONAJE == SONIC){
 		BorrarGoku(126,111,79);
 		BorrarPouAsesino(126,111,79);
@@ -76,4 +75,5 @@ void Seleccion(){
 		strcpy(personaje, "Pou");
 		MostrarPouAsesino(126,111,79);
 	}
+	
 }  
