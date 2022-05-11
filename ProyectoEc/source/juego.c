@@ -78,15 +78,11 @@ void juego()
 				MostrarSonic(126,40,140);
 			}
 			else if( PERSONAJE == GOKU ){
-				for(int i=2;i<3;i++){
-					enemigoRandom[i-1] = enemigoRandom[i];
-				}
+				enemigoRandom[1] = enemigoRandom[2];
+				
 				MostrarGoku(126,40,140);
 			}
 			else if( PERSONAJE == KRATOS ){
-				for(int i=2;i<3;i++){
-					enemigoRandom[i-1] = enemigoRandom[i];
-				}
 				MostrarPouAsesino(126,40,140);
 			}
 
