@@ -24,7 +24,7 @@ void juego()
 	//definiciones de variables
 	int i=9;
 	int tecla=0;
-	int limpiar = 0;
+	int indiceEnemigoRandom = rand()%2;
 
 	ESTADO=INICIO;
 
@@ -65,12 +65,14 @@ void juego()
 			iprintf("\x1b[7;2HEl personaje es %s", personaje);
 			//Rotacion de personajes
 		}
+			
 		//Insertar Personajes
 		else if(ESTADO == PELEA){
 			visualizarPelea();
 			PonerEnMarchaTempo();
 
 			int enemigoRandom[2] = {0,1,2};
+
 			if( PERSONAJE == SONIC ){
 				MostrarSonic(126,40,140);
 				for(int i=1;i<3;i++){
@@ -86,7 +88,6 @@ void juego()
 				MostrarPouAsesino(126,40,140);
 			}
 
-			int indiceEnemigoRandom = rand()%2;
 			int enemigo = enemigoRandom[indiceEnemigoRandom];
 
 			if(enemigo == SONIC){

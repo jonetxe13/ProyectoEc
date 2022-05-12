@@ -1,25 +1,25 @@
 
-//{{BLOCK(FondoPelea)
+//{{BLOCK(Puerta)
 
 //======================================================================
 //
-//	FondoPelea, 255x191@16, 
+//	Puerta, 256x192@16, 
 //	Alphabit on.
 //	+ bitmap not compressed
-//	Total size: 97792 = 97792
+//	Total size: 98304 = 98304
 //
-//	Time-stamp: 2022-05-12, 10:48:57
+//	Time-stamp: 2022-05-12, 10:38:44
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.16
 //	( http://www.coranac.com/projects/#grit )
 //
 //======================================================================
 
-#ifndef GRIT_FONDOPELEA_H
-#define GRIT_FONDOPELEA_H
+#ifndef GRIT_PUERTA_H
+#define GRIT_PUERTA_H
 
-#define FondoPeleaBitmapLen 97792
-extern const unsigned int FondoPeleaBitmap[24448];
+#define PuertaBitmapLen 98304
+extern const unsigned int PuertaBitmap[24576];
 
-#endif // GRIT_FONDOPELEA_H
+#endif // GRIT_PUERTA_H
 
-//}}BLOCK(FondoPelea)
+//}}BLOCK(Puerta)
