@@ -56,22 +56,22 @@ void RutAtencionTeclado (){
 		}
 	}
 }
-int posx= 10;
-int posy= 170;
+int posx= 73;
+int posy= 140;
 
 void RutAtencionTempo()
 {
 	static int tick=0;
 	static int seg=0;
+	static int tickAnimaciones = 0;
 
 	if (ESTADO==PELEA)
 	{
 		tick++; 
-		if(tick == 1){
-			tick = 0;
+		tickAnimaciones++;
+		if(tickAnimaciones <= 20){
 			posx += 5;
 			posy -= 5;
-
 			MostrarAtaque(1,posx,posy);
 		}
 		if (tick==5)

@@ -16,14 +16,11 @@
 #include "fondos.h"
 #include "EstadoSeleccion.h"
 
-int tiempo;
 int presionada = 0;
 
 void juego()
 {	
 	//definiciones de variables
-	int i=9;
-	int tecla=0;
 	int indiceEnemigoRandom = rand()%2;
 
 	ESTADO=INICIO;
@@ -31,7 +28,6 @@ void juego()
 	//*******************************EN LA 2.ACTIVIDAD ********************************//
 	// LLAMADAS A REALIZAR:
 	// Configurar el teclado.
-	//int APorInt = 0x4001;
 	int ABPorInt = 0x4003;
 	ConfigurarTeclado(ABPorInt);
 	// Configurar el temporizador.
@@ -66,7 +62,6 @@ void juego()
 			//Rotacion de personajes
 		}
 			
-		//Insertar Personajes
 		else if(ESTADO == PELEA){
 			visualizarPelea();
 			PonerEnMarchaTempo();
@@ -88,7 +83,7 @@ void juego()
 				MostrarPouAsesino(126,40,140);
 			}
 
-			int enemigo = enemigoRandom[indiceEnemigoRandom];
+			const int enemigo = enemigoRandom[indiceEnemigoRandom];
 
 			if(enemigo == SONIC){
 				MostrarSonic(125,174,45);
