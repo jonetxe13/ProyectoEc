@@ -25,7 +25,7 @@ void Seleccion(){
 	touchRead(&posPantalla);
 	if(posPantalla.px < 70 && posPantalla.px > 20 && posPantalla.py > 76 && posPantalla.py < 116 && tocado == 0){
 			iprintf("\x1b[2J");
-			PERSONAJE += 1;
+			PERSONAJE -= 1;
 			if(PERSONAJE<0) PERSONAJE=2;
 			else if(PERSONAJE>2) PERSONAJE=0;
 			tocado = 1;
@@ -34,6 +34,18 @@ void Seleccion(){
 			tocado = 0;
 	}
 
+	touchPosition posPantalla2;
+	touchRead(&posPantalla2);
+	if(posPantalla2.px > 185 && posPantalla2.px < 235 && posPantalla2.py > 76 && posPantalla2.py < 116 && tocado == 0){
+			iprintf("\x1b[2J");
+			PERSONAJE += 1;
+			if(PERSONAJE<0) PERSONAJE=2;
+			else if(PERSONAJE>2) PERSONAJE=0;
+			tocado = 1;
+	}
+	else if(tocado == 1 && posPantalla2.px == 0 && posPantalla2.py == 0){
+			tocado = 0;
+	} 
 	//seleccionar personaje con la L y con la R
 	if( TeclaDetectada() && TeclaPulsada()==L && presionada ==0){
 		iprintf("\x1b[2J");
