@@ -58,22 +58,15 @@ void Seleccion(){
 
 
 	if(PERSONAJE == SONIC){
-		BorrarGoku(126,111,79);
-		BorrarPouAsesino(126,111,79);
 		strcpy(personaje, "Sonic");
 		MostrarSonic(126,111,79);
 	}
 	else if(PERSONAJE == GOKU){
-		BorrarSonic(126,111,79);
-		BorrarPouAsesino(126,111,79);
 		strcpy(personaje, "Goku");
 		MostrarGoku(126,111,79);
 	}
 	else if(PERSONAJE == KRATOS){
-		BorrarGoku(126,111,79);
-		BorrarSonic(126,111,79);
 		strcpy(personaje, "Pou");
 		MostrarPouAsesino(126,111,79);
 	}
-	
 }  
