@@ -78,16 +78,12 @@ void juego()
 				}
 			}
 			else if( PERSONAJE == GOKU ){
+				enemigoRandom[1] = enemigoRandom[2];
+				
 				MostrarGoku(126,40,140);
-				for(int i=2;i<3;i++){
-					enemigoRandom[i-1] = enemigoRandom[i];
-				}
 			}
 			else if( PERSONAJE == KRATOS ){
 				MostrarPouAsesino(126,40,140);
-				for(int i=2;i<3;i++){
-					enemigoRandom[i-1] = enemigoRandom[i];
-				}
 			}
 
 			int indiceEnemigoRandom = rand()%2;
@@ -114,7 +110,7 @@ void juego()
 		}
 
 		else if(ESTADO == FIN){
-			BorrarRombo(126,70,150);
+			BorrarTodos();
 			iprintf("\x1b[2;1H Se ha acabado la partida");
 			if(HP1 <= 0){
 				iprintf("\x1b[15;1HGana la IA tonto que no sabes darle a la B xd");
