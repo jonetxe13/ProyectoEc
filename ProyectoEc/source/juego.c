@@ -72,35 +72,35 @@ void juego()
 
 			int enemigoRandom[2] = {0,1,2};
 			if( PERSONAJE == SONIC ){
+				MostrarSonic(126,40,140);
 				for(int i=1;i<3;i++){
 					enemigoRandom[i-1] = enemigoRandom[i];
 				}
-				MostrarSonic(126,40,140);
 			}
 			else if( PERSONAJE == GOKU ){
+				MostrarGoku(126,40,140);
 				for(int i=2;i<3;i++){
 					enemigoRandom[i-1] = enemigoRandom[i];
 				}
-				MostrarGoku(126,40,140);
 			}
 			else if( PERSONAJE == KRATOS ){
+				MostrarPouAsesino(126,40,140);
 				for(int i=2;i<3;i++){
 					enemigoRandom[i-1] = enemigoRandom[i];
 				}
-				MostrarPouAsesino(126,40,140);
 			}
 
 			int indiceEnemigoRandom = rand()%2;
 			int enemigo = enemigoRandom[indiceEnemigoRandom];
 
 			if(enemigo == SONIC){
-				MostrarSonic(126,174,45);
+				MostrarSonic(125,174,45);
 			}
 			else if(enemigo == GOKU){
-				MostrarGoku(126,174,45);
+				MostrarGoku(125,174,45);
 			}
 			else if(enemigo == KRATOS){
-				MostrarPouAsesino(126,174,45);
+				MostrarPouAsesino(125,174,45);
 			}
 
 			iprintf("\x1b[5;1H%s", personaje); iprintf("\x1b[5;7H:%d", HP1);
@@ -115,7 +115,6 @@ void juego()
 
 		else if(ESTADO == FIN){
 			BorrarRombo(126,70,150);
-
 			iprintf("\x1b[2;1H Se ha acabado la partida");
 			if(HP1 <= 0){
 				iprintf("\x1b[15;1HGana la IA tonto que no sabes darle a la B xd");
