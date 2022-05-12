@@ -26,12 +26,14 @@ void RutAtencionTeclado (){
 			ESTADO = PELEA;
 		}
 	}
-	else if (ESTADO == PELEA){	
+	else if (ESTADO == PELEA){
+		int Nataques;	
 		if(player == 0){
 			if(TeclaPulsada() == A){
-				HP2 -= 5;
+				Nataques = rand()%3;
+				HP2 -= 10*Nataques;
 				player = 1;
-				iprintf("\x1b[2J");
+				iprintf("\x1b[13;2HHa atacado %d",Nataques," nº de veces");
 			}
 			else if(TeclaPulsada() == B){
 				HP2 -= 20;
