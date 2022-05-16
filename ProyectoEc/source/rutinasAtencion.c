@@ -17,6 +17,8 @@ int seg3;
 int player = 0;
 int HP1 = vida;
 int HP2 = vida;
+int posx= 70;
+int posy= 130;
 
 void RutAtencionTeclado (){
 
@@ -27,8 +29,8 @@ void RutAtencionTeclado (){
 		}
 	}
 	else if (ESTADO == PELEA){
-		int Nataques;	
 		if(player == 0){
+			int Nataques;	
 			if(TeclaPulsada() == A){
 				Nataques = rand()%3;
 				HP2 -= 10*Nataques;
@@ -36,7 +38,7 @@ void RutAtencionTeclado (){
 				iprintf("\x1b[13;2HHa atacado %d",Nataques," nº de veces");
 			}
 			else if(TeclaPulsada() == B){
-				HP2 -= 20;
+				HP2 -= 10;
 				player = 1;
 				iprintf("\x1b[2J");
 			}
@@ -56,28 +58,35 @@ void RutAtencionTeclado (){
 		}
 	}
 }
-int posx= 10;
-int posy= 170;
 
 void RutAtencionTempo()
 {
 	static int tick=0;
 	static int seg=0;
+	static int tickAnimaciones = 0;
 
 	if (ESTADO==PELEA)
 	{
 		tick++; 
-		if(tick == 1){
-			tick = 0;
-			posx += 5;
-			posy -= 5;
+		tickAnimaciones++;
+		//animation for MostrarAtaque in diagonal
 
-			MostrarAtaque(1,posx,posy);
+		if(player == 0){
+			if(tickAnimaciones < 10){
+				MostrarAtaque(12,posx,posy);
+				posx += 12;
+				posy -= 12;
+				}
+			else{
+				tickAnimaciones == 0;
+				posx = 70;
+				posy = 130;
+			}
 		}
 		if (tick==5)
 		{
 			tick=0;
-			
+
 			if(player == 1){
 
 				seg++;

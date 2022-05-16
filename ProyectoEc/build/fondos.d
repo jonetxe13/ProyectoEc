@@ -1,4 +1,4 @@
-perifericos.o: /home/jonetxe13/ProyectoEc/ProyectoEc/source/perifericos.c \
+fondos.o: /home/jonetxe13/ProyectoEc/ProyectoEc/source/fondos.c \
  /opt/devkitpro/libnds/include/nds.h \
  /opt/devkitpro/libnds/include/nds/libversion.h \
  /opt/devkitpro/libnds/include/nds/ndstypes.h \
@@ -59,7 +59,15 @@ perifericos.o: /home/jonetxe13/ProyectoEc/ProyectoEc/source/perifericos.c \
  /opt/devkitpro/libnds/include/nds/arm9/video.h \
  /opt/devkitpro/libnds/include/nds/arm9/videoGL.h \
  /opt/devkitpro/libnds/include/nds/arm9/nand.h \
- /home/jonetxe13/ProyectoEc/ProyectoEc/include/definiciones.h
+ /home/jonetxe13/ProyectoEc/ProyectoEc/include/fondos.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/include/graficos.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Puerta.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Derrota.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/PuertaAbierta.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/FondoPelea.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Victoria.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Inicio.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Seleccion.h
 /opt/devkitpro/libnds/include/nds.h:
 /opt/devkitpro/libnds/include/nds/libversion.h:
 /opt/devkitpro/libnds/include/nds/ndstypes.h:
@@ -120,4 +128,12 @@ perifericos.o: /home/jonetxe13/ProyectoEc/ProyectoEc/source/perifericos.c \
 /opt/devkitpro/libnds/include/nds/arm9/video.h:
 /opt/devkitpro/libnds/include/nds/arm9/videoGL.h:
 /opt/devkitpro/libnds/include/nds/arm9/nand.h:
-/home/jonetxe13/ProyectoEc/ProyectoEc/include/definiciones.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/include/fondos.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/include/graficos.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Puerta.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Derrota.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/PuertaAbierta.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/FondoPelea.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Victoria.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Inicio.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Seleccion.h:

@@ -9,15 +9,24 @@
 #include "perifericos.h"
 #include "rutinasAtencion.h"
 #include "fondos.h"
-#include "juego.h"
 
-void BorrarTodos(){
-//Borrar Enemigos
-    BorrarSonic(1,174,45);
-    BorrarGoku(1,174,45);
-    BorrarPouAsesino(1,174,45);
-//Borrar Aliados
-    BorrarSonic(126,40,140);
-    BorrarGoku(126,40,140);
-    BorrarPouAsesino(126,40,140);
-}
+
+char personaje[10];
+
+void fondosSeleccion(){
+    if(PERSONAJE == SONIC){
+        BorrarPouAsesino(126,111,79);
+        strcpy(personaje, "sonic");
+        MostrarSonic(126,111,79);
+    }
+    else if(PERSONAJE == GOKU){
+        BorrarSonic(126,111,79);
+        BorrarPouAsesino(126,111,79);
+        strcpy(personaje, "goku");
+    }
+    else if(PERSONAJE == KRATOS){
+        BorrarSonic(126,111,79);
+        strcpy(personaje, "pou");
+        MostrarPouAsesino(126,111,79);
+    }
+}  

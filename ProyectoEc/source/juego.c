@@ -16,14 +16,11 @@
 #include "fondos.h"
 #include "EstadoSeleccion.h"
 
-int tiempo;
 int presionada = 0;
 
 void juego()
 {	
 	//definiciones de variables
-	int i=9;
-	int tecla=0;
 	int indiceEnemigoRandom = rand()%2;
 
 	ESTADO=INICIO;
@@ -31,7 +28,6 @@ void juego()
 	//*******************************EN LA 2.ACTIVIDAD ********************************//
 	// LLAMADAS A REALIZAR:
 	// Configurar el teclado.
-	//int APorInt = 0x4001;
 	int ABPorInt = 0x4003;
 	ConfigurarTeclado(ABPorInt);
 	// Configurar el temporizador.
@@ -66,12 +62,11 @@ void juego()
 			//Rotacion de personajes
 		}
 			
-		//Insertar Personajes
 		else if(ESTADO == PELEA){
 			
 			PonerEnMarchaTempo();
 
-			int enemigoRandom[2] = {0,1,2};
+			int enemigoRandom[3] = {0,1,2};
 
 			if( PERSONAJE == SONIC ){
 				MostrarSonic(126,40,140);
@@ -88,16 +83,16 @@ void juego()
 				MostrarPouAsesino(126,40,140);
 			}
 
-			int enemigo = enemigoRandom[indiceEnemigoRandom];
+			const int enemigo = enemigoRandom[indiceEnemigoRandom];
 
 			if(enemigo == SONIC){
-				MostrarSonic(125,174,45);
+				MostrarSonic(1,174,45);
 			}
 			else if(enemigo == GOKU){
-				MostrarGoku(125,174,45);
+				MostrarGoku(1,174,45);
 			}
 			else if(enemigo == KRATOS){
-				MostrarPouAsesino(125,174,45);
+				MostrarPouAsesino(1,174,45);
 			}
 
 			iprintf("\x1b[5;1H%s", personaje); iprintf("\x1b[5;7H:%d", HP1);
@@ -113,13 +108,16 @@ void juego()
 		else if(ESTADO == FIN){
 			BorrarTodos();
 			iprintf("\x1b[2;1H Se ha acabado la partida");
-			if(HP1 <= 0){
+			if(HP1 <= 0 || HP1 < HP2){
 				iprintf("\x1b[15;1HGana la IA tonto que no sabes darle a la B xd");
 				visualizarDerrota();
 			}
-			else if(HP2 <= 0){
+			else if(HP2 <= 0 || HP2 < HP1){
 				iprintf("\x1b[17;1HGanas tu, sabes darle a la B xd");
 				visualizarVictoria();
+			}
+			else{
+				
 			}
 		}
 	}
