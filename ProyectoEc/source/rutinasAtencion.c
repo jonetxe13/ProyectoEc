@@ -69,16 +69,11 @@ void RutAtencionTempo()
 					contar = 1;
 					tickAnimaciones = 0;
 					tecla = 'a';
-					/* Nataques = rand()%3; */
-					/* HP2 -= 10*Nataques; */
-					/* iprintf("\x1b[13;2HHa atacado %d",Nataques," nº de veces"); */
 				}
 				else if(TeclaPulsada() == B && contar == 0){
 					contar = 1;
 					tickAnimaciones = 0;
 					tecla = 'b';
-					/* HP2 -= 10; */
-					/* iprintf("\x1b[2J"); */
 				}
 				if(tickAnimaciones < 10 && contar == 1){
 					MostrarAtaque(12,posx,posy);
