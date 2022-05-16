@@ -21,6 +21,7 @@ int presionada = 0;
 void juego()
 {	
 	//definiciones de variables
+	srand(time(NULL));
 	int indiceEnemigoRandom = rand()%2;
 	int Mapa = rand()%3;
 	ESTADO=INICIO;
