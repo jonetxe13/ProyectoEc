@@ -64,18 +64,21 @@ void RutAtencionTempo()
 		//animation for MostrarAtaque in diagonal
 		if(player == 0){
 				int Nataques;	
+				char tecla;
 				if(TeclaPulsada() == A && contar == 0){
 					contar = 1;
 					tickAnimaciones = 0;
-					Nataques = rand()%3;
-					HP2 -= 10*Nataques;
-					iprintf("\x1b[13;2HHa atacado %d",Nataques," nº de veces");
+					tecla = 'a';
+					/* Nataques = rand()%3; */
+					/* HP2 -= 10*Nataques; */
+					/* iprintf("\x1b[13;2HHa atacado %d",Nataques," nº de veces"); */
 				}
 				else if(TeclaPulsada() == B && contar == 0){
 					contar = 1;
 					tickAnimaciones = 0;
-					HP2 -= 10;
-					iprintf("\x1b[2J");
+					tecla = 'b';
+					/* HP2 -= 10; */
+					/* iprintf("\x1b[2J"); */
 				}
 				if(tickAnimaciones < 10 && contar == 1){
 					MostrarAtaque(12,posx,posy);
@@ -88,17 +91,25 @@ void RutAtencionTempo()
 					player = 1;
 					posx = 50;
 					posy = 155;
+					if(tecla == 'a'){
+					Nataques = rand()%3;
+					HP2 -= 10*Nataques;
+					iprintf("\x1b[13;2HHa atacado %d",Nataques," nº de veces");
+					}
+					else if(tecla == 'b'){
+					HP2 -= 10;
+					}
 				}
 		}
 		else if(player == 1){
 			if(tickAnimaciones == 10){
 					int aleatorio = rand()%2;
 					if(aleatorio == 0){
-						HP1 -= 5; 
+						HP1 -= 10; 
 						player = 0;
 						iprintf("\x1b[2J");
 					}else{ 
-						HP1 -= 20; 
+						HP1 -= 15; 
 						player = 0;
 						iprintf("\x1b[2J");
 					}

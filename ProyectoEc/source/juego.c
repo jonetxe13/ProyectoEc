@@ -120,9 +120,6 @@ void juego()
 				iprintf("\x1b[17;1HGanas tu, sabes darle a la B xd");
 				visualizarVictoria();
 			}
-			else{
-				
-			}
 		}
 
 		else if(ESTADO == PAUSA){
