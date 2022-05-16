@@ -11,7 +11,9 @@
 #include "Puerta.h"
 #include "Derrota.h"
 #include "PuertaAbierta.h"
-#include "FondoPelea.h"
+#include "Pelea1.h"
+#include "Pelea2.h"
+#include "Pelea3.h"
 #include "Victoria.h"
 #include "Inicio.h"
 #include "Seleccion.h"
@@ -29,13 +31,31 @@ void visualizarPuerta() {
                      PuertaBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }
 
-void visualizarPelea() {
+void visualizarPelea1() {
 	
 	dmaCopyHalfWords(DMA_CHANNEL,
-                     FondoPeleaBitmap, /* Variable que se genera automaticamente */
+                     Pelea1Bitmap, /* Variable que se genera automaticamente */
                      (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
-                     FondoPeleaBitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+                     Pelea1BitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
 }
+
+void visualizarPelea2() {
+	
+	dmaCopyHalfWords(DMA_CHANNEL,
+                     Pelea2Bitmap, /* Variable que se genera automaticamente */
+                     (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
+                     Pelea2BitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+}
+
+void visualizarPelea3() {
+	
+	dmaCopyHalfWords(DMA_CHANNEL,
+                     Pelea3Bitmap, /* Variable que se genera automaticamente */
+                     (uint16 *)BG_BMP_RAM(0), /* Dirección del fondo principal */
+                     Pelea3BitmapLen); /* Longitud en bytes, variable que se genera automáticamente */
+}
+
+
 
 void visualizarInicio() {
 	

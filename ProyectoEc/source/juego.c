@@ -68,7 +68,7 @@ void juego()
 			
 		//Insertar Personajes
 		else if(ESTADO == PELEA){
-			visualizarPelea();
+			
 			PonerEnMarchaTempo();
 
 			int enemigoRandom[2] = {0,1,2};

@@ -1,9 +1,9 @@
 
-//{{BLOCK(fondoStart)
+//{{BLOCK(Pelea1)
 
 //======================================================================
 //
-//	fondoStart, 255x191@16, 
+//	Pelea1, 256x191@16, 
 //	Alphabit on.
 //	+ bitmap not compressed
 //	Total size: 97792 = 97792
@@ -14,12 +14,12 @@
 //
 //======================================================================
 
-#ifndef GRIT_FONDOSTART_H
-#define GRIT_FONDOSTART_H
+#ifndef GRIT_PELEA1_H
+#define GRIT_PELEA1_H
 
-#define fondoStartBitmapLen 97792
-extern const unsigned int fondoStartBitmap[24448];
+#define Pelea1BitmapLen 97792
+extern const unsigned int Pelea1Bitmap[24448];
 
-#endif // GRIT_FONDOSTART_H
+#endif // GRIT_PELEA1_H
 
-//}}BLOCK(fondoStart)
+//}}BLOCK(Pelea1)
