@@ -12,6 +12,9 @@
 #include "juego.h"
 
 void BorrarTodos(){
+//Borrar Ataques
+    BorrarAtaque(12,posx,posy);
+    BorrarAtaque(12,pos2x,pos2y);
 //Borrar Enemigos
     BorrarSonic(1,174,45);
     BorrarGoku(1,174,45);

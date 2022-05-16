@@ -47,7 +47,7 @@ void juego()
 
 		if(ESTADO == INICIO){
 			visualizarInicio();
-
+			BorrarTodos();
 			//Insertar Portada y Texto(pulsa START para comenzar)
 			iprintf("\x1b[4;2Hestado INICIO");
 			if(TeclaPulsada()==START) {
@@ -67,6 +67,9 @@ void juego()
 			FondoPelea(Mapa);
 			PonerEnMarchaTempo();
 
+			if(TeclaPulsada() == START){
+				ESTADO = PAUSA;
+			}
 			int enemigoRandom[3] = {0,1,2};
 
 			if( PERSONAJE == SONIC ){
@@ -119,6 +122,18 @@ void juego()
 			}
 			else{
 				
+			}
+		}
+
+		else if(ESTADO == PAUSA){
+			PararTempo();
+			iprintf("\x1b[17;1HEl juego esta detenido");
+			if(TeclaPulsada() == A){
+				ESTADO = PELEA;
+			}
+			else if(TeclaPulsada() == B){
+				iprintf("\x1b[2J");
+				ESTADO = INICIO;
 			}
 		}
 	}

@@ -1,5 +1,5 @@
 rutinasAtencion.o: \
- /home/jonetxe13/ProyectoEC/ProyectoEc/source/rutinasAtencion.c \
+ /home/julenson/ProyectoEc/ProyectoEc/source/rutinasAtencion.c \
  /opt/devkitpro/libnds/include/nds.h \
  /opt/devkitpro/libnds/include/nds/libversion.h \
  /opt/devkitpro/libnds/include/nds/ndstypes.h \
@@ -60,11 +60,11 @@ rutinasAtencion.o: \
  /opt/devkitpro/libnds/include/nds/arm9/video.h \
  /opt/devkitpro/libnds/include/nds/arm9/videoGL.h \
  /opt/devkitpro/libnds/include/nds/arm9/nand.h \
- /home/jonetxe13/ProyectoEC/ProyectoEc/include/definiciones.h \
- /home/jonetxe13/ProyectoEC/ProyectoEc/include/juego.h \
- /home/jonetxe13/ProyectoEC/ProyectoEc/include/perifericos.h \
- /home/jonetxe13/ProyectoEC/ProyectoEc/include/fondos.h \
- /home/jonetxe13/ProyectoEC/ProyectoEc/include/sprites.h
+ /home/julenson/ProyectoEc/ProyectoEc/include/definiciones.h \
+ /home/julenson/ProyectoEc/ProyectoEc/include/juego.h \
+ /home/julenson/ProyectoEc/ProyectoEc/include/perifericos.h \
+ /home/julenson/ProyectoEc/ProyectoEc/include/fondos.h \
+ /home/julenson/ProyectoEc/ProyectoEc/include/sprites.h
 /opt/devkitpro/libnds/include/nds.h:
 /opt/devkitpro/libnds/include/nds/libversion.h:
 /opt/devkitpro/libnds/include/nds/ndstypes.h:
@@ -125,8 +125,8 @@ rutinasAtencion.o: \
 /opt/devkitpro/libnds/include/nds/arm9/video.h:
 /opt/devkitpro/libnds/include/nds/arm9/videoGL.h:
 /opt/devkitpro/libnds/include/nds/arm9/nand.h:
-/home/jonetxe13/ProyectoEC/ProyectoEc/include/definiciones.h:
-/home/jonetxe13/ProyectoEC/ProyectoEc/include/juego.h:
-/home/jonetxe13/ProyectoEC/ProyectoEc/include/perifericos.h:
-/home/jonetxe13/ProyectoEC/ProyectoEc/include/fondos.h:
-/home/jonetxe13/ProyectoEC/ProyectoEc/include/sprites.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/definiciones.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/juego.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/perifericos.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/fondos.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/sprites.h:

@@ -1,4 +1,4 @@
-sprites.o: /home/jonetxe13/ProyectoEC/ProyectoEc/source/sprites.c \
+sprites.o: /home/julenson/ProyectoEc/ProyectoEc/source/sprites.c \
  /opt/devkitpro/libnds/include/nds.h \
  /opt/devkitpro/libnds/include/nds/libversion.h \
  /opt/devkitpro/libnds/include/nds/ndstypes.h \
@@ -59,8 +59,8 @@ sprites.o: /home/jonetxe13/ProyectoEC/ProyectoEc/source/sprites.c \
  /opt/devkitpro/libnds/include/nds/arm9/video.h \
  /opt/devkitpro/libnds/include/nds/arm9/videoGL.h \
  /opt/devkitpro/libnds/include/nds/arm9/nand.h \
- /home/jonetxe13/ProyectoEC/ProyectoEc/include/sprites.h \
- /home/jonetxe13/ProyectoEC/ProyectoEc/include/definiciones.h
+ /home/julenson/ProyectoEc/ProyectoEc/include/sprites.h \
+ /home/julenson/ProyectoEc/ProyectoEc/include/definiciones.h
 /opt/devkitpro/libnds/include/nds.h:
 /opt/devkitpro/libnds/include/nds/libversion.h:
 /opt/devkitpro/libnds/include/nds/ndstypes.h:
@@ -121,5 +121,5 @@ sprites.o: /home/jonetxe13/ProyectoEC/ProyectoEc/source/sprites.c \
 /opt/devkitpro/libnds/include/nds/arm9/video.h:
 /opt/devkitpro/libnds/include/nds/arm9/videoGL.h:
 /opt/devkitpro/libnds/include/nds/arm9/nand.h:
-/home/jonetxe13/ProyectoEC/ProyectoEc/include/sprites.h:
-/home/jonetxe13/ProyectoEC/ProyectoEc/include/definiciones.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/sprites.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/definiciones.h:

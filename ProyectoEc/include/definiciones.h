@@ -46,6 +46,7 @@ extern touchPosition PANT_DAT;
 #define SELECCION 1
 #define PELEA 2
 #define FIN 3
+#define PAUSA 4
 extern int ESTADO;
 
 #define SONIC 0
