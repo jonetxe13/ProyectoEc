@@ -1,4 +1,4 @@
-perifericos.o: /home/julenson/ProyectoEc/ProyectoEc/source/perifericos.c \
+perifericos.o: /home/jonetxe13/ProyectoEC/ProyectoEc/source/perifericos.c \
  /opt/devkitpro/libnds/include/nds.h \
  /opt/devkitpro/libnds/include/nds/libversion.h \
  /opt/devkitpro/libnds/include/nds/ndstypes.h \
@@ -59,7 +59,7 @@ perifericos.o: /home/julenson/ProyectoEc/ProyectoEc/source/perifericos.c \
  /opt/devkitpro/libnds/include/nds/arm9/video.h \
  /opt/devkitpro/libnds/include/nds/arm9/videoGL.h \
  /opt/devkitpro/libnds/include/nds/arm9/nand.h \
- /home/julenson/ProyectoEc/ProyectoEc/include/definiciones.h
+ /home/jonetxe13/ProyectoEC/ProyectoEc/include/definiciones.h
 /opt/devkitpro/libnds/include/nds.h:
 /opt/devkitpro/libnds/include/nds/libversion.h:
 /opt/devkitpro/libnds/include/nds/ndstypes.h:
@@ -120,4 +120,4 @@ perifericos.o: /home/julenson/ProyectoEc/ProyectoEc/source/perifericos.c \
 /opt/devkitpro/libnds/include/nds/arm9/video.h:
 /opt/devkitpro/libnds/include/nds/arm9/videoGL.h:
 /opt/devkitpro/libnds/include/nds/arm9/nand.h:
-/home/julenson/ProyectoEc/ProyectoEc/include/definiciones.h:
+/home/jonetxe13/ProyectoEC/ProyectoEc/include/definiciones.h:
