@@ -63,7 +63,7 @@ void juego()
 		}
 			
 		else if(ESTADO == PELEA){
-			
+			FondoPelea();
 			PonerEnMarchaTempo();
 
 			int enemigoRandom[3] = {0,1,2};

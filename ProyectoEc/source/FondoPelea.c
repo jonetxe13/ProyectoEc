@@ -11,8 +11,7 @@
 #include "fondos.h"
 #include "EstadoSeleccion.h"
 
-int Mapa;
-Mapa = rand()%3;
+int Mapa = rand()%3;
 
 void FondoPelea(){
     if(Mapa == 0){
