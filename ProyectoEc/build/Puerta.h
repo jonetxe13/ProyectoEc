@@ -8,7 +8,11 @@
 //	+ bitmap not compressed
 //	Total size: 98304 = 98304
 //
+<<<<<<< HEAD
 //	Time-stamp: 2022-05-16, 11:29:54
+=======
+//	Time-stamp: 2022-05-16, 11:42:56
+>>>>>>> a491ea8... Verdadera Aleatoriedad
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.16
 //	( http://www.coranac.com/projects/#grit )
 //
