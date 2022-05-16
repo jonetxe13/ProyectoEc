@@ -22,7 +22,7 @@ void juego()
 {	
 	//definiciones de variables
 	int indiceEnemigoRandom = rand()%2;
-
+	int Mapa = rand()%3;
 	ESTADO=INICIO;
 
 	//*******************************EN LA 2.ACTIVIDAD ********************************//
@@ -63,13 +63,13 @@ void juego()
 		}
 			
 		else if(ESTADO == PELEA){
-			FondoPelea();
+			FondoPelea(Mapa);
 			PonerEnMarchaTempo();
 
 			int enemigoRandom[3] = {0,1,2};
 
 			if( PERSONAJE == SONIC ){
-				MostrarSonic(126,40,140);
+				MostrarSonic(126,50,155);
 				for(int i=1;i<3;i++){
 					enemigoRandom[i-1] = enemigoRandom[i];
 				}
@@ -77,22 +77,22 @@ void juego()
 			else if( PERSONAJE == GOKU ){
 				enemigoRandom[1] = enemigoRandom[2];
 				
-				MostrarGoku(126,40,140);
+				MostrarGoku(126,50,155);
 			}
 			else if( PERSONAJE == KRATOS ){
-				MostrarPouAsesino(126,40,140);
+				MostrarPouAsesino(126,50,155);
 			}
 
 			const int enemigo = enemigoRandom[indiceEnemigoRandom];
 
 			if(enemigo == SONIC){
-				MostrarSonic(1,174,45);
+				MostrarSonic(1,180,105);
 			}
 			else if(enemigo == GOKU){
-				MostrarGoku(1,174,45);
+				MostrarGoku(1,180,105);
 			}
 			else if(enemigo == KRATOS){
-				MostrarPouAsesino(1,174,45);
+				MostrarPouAsesino(1,180,105);
 			}
 
 			iprintf("\x1b[5;1H%s", personaje); iprintf("\x1b[5;7H:%d", HP1);
