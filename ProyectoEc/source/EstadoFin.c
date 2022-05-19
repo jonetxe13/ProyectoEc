@@ -16,11 +16,15 @@ void BorrarTodos(){
     BorrarAtaque(12,posx,posy);
     BorrarAtaque(12,pos2x,pos2y);
 //Borrar Enemigos
-    BorrarSonic(1,174,45);
-    BorrarGoku(1,174,45);
-    BorrarPouAsesino(1,174,45);
+    BorrarSonic(2,174,45);
+    BorrarGoku(2,174,45);
+    BorrarPouAsesino(2,174,45);
 //Borrar Aliados
-    BorrarSonic(126,40,140);
-    BorrarGoku(126,40,140);
-    BorrarPouAsesino(126,40,140);
+    BorrarSonic(1,40,140);
+    BorrarGoku(1,40,140);
+    BorrarPouAsesino(1,40,140);
+//BorrarSeleccion
+    BorrarSonic(1,111,79);
+    BorrarGoku(1,111,79);
+    BorrarPouAsesino(1,111,79);
 }

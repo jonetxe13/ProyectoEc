@@ -17,14 +17,14 @@
 #include "EstadoSeleccion.h"
 
 int presionada = 0;
-
 void juego()
 {	
 	//definiciones de variables
-	srand(time(NULL));
-	int indiceEnemigoRandom = rand()%2;
-	int Mapa = rand()%3;
-	ESTADO=INICIO;
+	ESTADO = INICIO;
+	int random;
+	int Mapa;
+	int indiceEnemigoRandom;
+
 
 	//*******************************EN LA 2.ACTIVIDAD ********************************//
 	// LLAMADAS A REALIZAR:
@@ -44,7 +44,7 @@ void juego()
 	while(1)
 	{	
 		/*******************************PROYECTO*****************************************/
-
+		
 		if(ESTADO == INICIO){
 			visualizarInicio();
 			BorrarTodos();
@@ -56,14 +56,24 @@ void juego()
 			}
 		}	
 		else if(ESTADO == SELECCION){
-
 			Seleccion();
+			random = 0;
+			player = 0;
 
 			iprintf("\x1b[7;2HEl personaje es %s", personaje);
 			//Rotacion de personajes
 		}
 			
 		else if(ESTADO == PELEA){
+			
+			if(random == 0){
+				BorrarTodos();
+				random = 1;
+				srand(time(NULL));
+				indiceEnemigoRandom = rand()%2;
+				Mapa = rand()%3;
+			}
+				
 			FondoPelea(Mapa);
 			PonerEnMarchaTempo();
 
@@ -73,7 +83,7 @@ void juego()
 			int enemigoRandom[3] = {0,1,2};
 
 			if( PERSONAJE == SONIC ){
-				MostrarSonic(126,50,155);
+				MostrarSonic(1,50,155);
 				for(int i=1;i<3;i++){
 					enemigoRandom[i-1] = enemigoRandom[i];
 				}
@@ -81,22 +91,22 @@ void juego()
 			else if( PERSONAJE == GOKU ){
 				enemigoRandom[1] = enemigoRandom[2];
 				
-				MostrarGoku(126,50,155);
+				MostrarGoku(1,50,155);
 			}
 			else if( PERSONAJE == KRATOS ){
-				MostrarPouAsesino(126,50,155);
+				MostrarPouAsesino(1,50,155);
 			}
 
 			const int enemigo = enemigoRandom[indiceEnemigoRandom];
 
 			if(enemigo == SONIC){
-				MostrarSonic(1,180,105);
+				MostrarSonic(2,180,105);
 			}
 			else if(enemigo == GOKU){
-				MostrarGoku(1,180,105);
+				MostrarGoku(2,180,105);
 			}
 			else if(enemigo == KRATOS){
-				MostrarPouAsesino(1,180,105);
+				MostrarPouAsesino(2,180,105);
 			}
 
 			iprintf("\x1b[5;1H%s", personaje); iprintf("\x1b[5;7H:%d", HP1);
@@ -123,8 +133,10 @@ void juego()
 		}
 
 		else if(ESTADO == PAUSA){
+			BorrarTodos();
 			PararTempo();
 			iprintf("\x1b[17;1HEl juego esta detenido");
+			visualizarPausa();
 			if(TeclaPulsada() == A){
 				ESTADO = PELEA;
 			}

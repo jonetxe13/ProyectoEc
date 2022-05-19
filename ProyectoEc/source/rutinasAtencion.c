@@ -14,7 +14,7 @@ int ESTADO;
 int PERSONAJE;
 int ATAQUES;
 int seg3;
-int player = 0;
+int player;
 int HP1 = vida;
 int HP2 = vida;
 int posx= 50;
@@ -77,22 +77,23 @@ void RutAtencionTempo()
 				}
 				if(tickAnimaciones < 10 && contar == 1){
 					MostrarAtaque(12,posx,posy);
-					posx += 16;
+					posx += 14;
 					posy -= 6;
 				}
 				else if(tickAnimaciones >= 10 && contar == 1){
+					BorrarAtaque(12,posx,posy);
 					tickAnimaciones = 0;
 					contar = 0;
 					player = 1;
 					posx = 50;
 					posy = 155;
-					if(tecla == 'a'){
-					Nataques = rand()%3;
-					HP2 -= 10*Nataques;
-					iprintf("\x1b[13;2HHa atacado %d",Nataques," nº de veces");
+					if(TeclaPulsada() == A && contar == 0){
+						Nataques = rand()%3;
+						HP2 -= 10*Nataques;
+						iprintf("\x1b[13;2HHa atacado %d",Nataques);
 					}
-					else if(tecla == 'b'){
-					HP2 -= 10;
+					else if(TeclaPulsada() == B && contar == 0){
+						HP2 -= 10;
 					}
 				}
 		}
@@ -117,11 +118,13 @@ void RutAtencionTempo()
 					pos2y += 6;
 				}
 				else if(tickAnimaciones2 >= 10){
+					BorrarAtaque(12,pos2x,pos2y);
 					tickAnimaciones2 = 0;
 					contar = 0;
 					player = 1;
 					pos2x = 180;
 					pos2y = 105;
+					
 				}
 		}
 

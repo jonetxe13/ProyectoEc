@@ -1,5 +1,5 @@
 fondosSeleccion.o: \
- /home/jonetxe13/ProyectoEc/ProyectoEc/source/fondosSeleccion.c \
+ /home/julenson/ProyectoEc/ProyectoEc/source/fondosSeleccion.c \
  /opt/devkitpro/libnds/include/nds.h \
  /opt/devkitpro/libnds/include/nds/libversion.h \
  /opt/devkitpro/libnds/include/nds/ndstypes.h \
@@ -60,10 +60,10 @@ fondosSeleccion.o: \
  /opt/devkitpro/libnds/include/nds/arm9/video.h \
  /opt/devkitpro/libnds/include/nds/arm9/videoGL.h \
  /opt/devkitpro/libnds/include/nds/arm9/nand.h \
- /home/jonetxe13/ProyectoEc/ProyectoEc/include/definiciones.h \
- /home/jonetxe13/ProyectoEc/ProyectoEc/include/perifericos.h \
- /home/jonetxe13/ProyectoEc/ProyectoEc/include/rutinasAtencion.h \
- /home/jonetxe13/ProyectoEc/ProyectoEc/include/fondos.h
+ /home/julenson/ProyectoEc/ProyectoEc/include/definiciones.h \
+ /home/julenson/ProyectoEc/ProyectoEc/include/perifericos.h \
+ /home/julenson/ProyectoEc/ProyectoEc/include/rutinasAtencion.h \
+ /home/julenson/ProyectoEc/ProyectoEc/include/fondos.h
 /opt/devkitpro/libnds/include/nds.h:
 /opt/devkitpro/libnds/include/nds/libversion.h:
 /opt/devkitpro/libnds/include/nds/ndstypes.h:
@@ -124,7 +124,7 @@ fondosSeleccion.o: \
 /opt/devkitpro/libnds/include/nds/arm9/video.h:
 /opt/devkitpro/libnds/include/nds/arm9/videoGL.h:
 /opt/devkitpro/libnds/include/nds/arm9/nand.h:
-/home/jonetxe13/ProyectoEc/ProyectoEc/include/definiciones.h:
-/home/jonetxe13/ProyectoEc/ProyectoEc/include/perifericos.h:
-/home/jonetxe13/ProyectoEc/ProyectoEc/include/rutinasAtencion.h:
-/home/jonetxe13/ProyectoEc/ProyectoEc/include/fondos.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/definiciones.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/perifericos.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/rutinasAtencion.h:
+/home/julenson/ProyectoEc/ProyectoEc/include/fondos.h:

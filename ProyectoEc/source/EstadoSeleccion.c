@@ -71,14 +71,14 @@ void Seleccion(){
 
 	if(PERSONAJE == SONIC){
 		strcpy(personaje, "Sonic");
-		MostrarSonic(126,111,79);
+		MostrarSonic(1,111,79);
 	}
 	else if(PERSONAJE == GOKU){
 		strcpy(personaje, "Goku");
-		MostrarGoku(126,111,79);
+		MostrarGoku(1,111,79);
 	}
 	else if(PERSONAJE == KRATOS){
 		strcpy(personaje, "Pou");
-		MostrarPouAsesino(126,111,79);
+		MostrarPouAsesino(1,111,79);
 	}
 }  

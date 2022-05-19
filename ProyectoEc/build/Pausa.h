@@ -1,25 +1,25 @@
 
-//{{BLOCK(FondoPelea)
+//{{BLOCK(Pausa)
 
 //======================================================================
 //
-//	FondoPelea, 255x191@16, 
+//	Pausa, 256x191@16, 
 //	Alphabit on.
 //	+ bitmap not compressed
 //	Total size: 97792 = 97792
 //
-//	Time-stamp: 2022-05-12, 23:19:15
+//	Time-stamp: 2022-05-19, 11:23:43
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.16
 //	( http://www.coranac.com/projects/#grit )
 //
 //======================================================================
 
-#ifndef GRIT_FONDOPELEA_H
-#define GRIT_FONDOPELEA_H
+#ifndef GRIT_PAUSA_H
+#define GRIT_PAUSA_H
 
-#define FondoPeleaBitmapLen 97792
-extern const unsigned int FondoPeleaBitmap[24448];
+#define PausaBitmapLen 97792
+extern const unsigned int PausaBitmap[24448];
 
-#endif // GRIT_FONDOPELEA_H
+#endif // GRIT_PAUSA_H
 
-//}}BLOCK(FondoPelea)
+//}}BLOCK(Pausa)

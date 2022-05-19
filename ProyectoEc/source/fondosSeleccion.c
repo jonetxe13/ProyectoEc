@@ -10,23 +10,17 @@
 #include "rutinasAtencion.h"
 #include "fondos.h"
 
-
-char personaje[10];
-
 void fondosSeleccion(){
     if(PERSONAJE == SONIC){
-        BorrarPouAsesino(126,111,79);
-        strcpy(personaje, "sonic");
-        MostrarSonic(126,111,79);
+        BorrarPouAsesino(1,111,79);
+        MostrarSonic(1,111,79);
     }
     else if(PERSONAJE == GOKU){
-        BorrarSonic(126,111,79);
-        BorrarPouAsesino(126,111,79);
-        strcpy(personaje, "goku");
+        BorrarSonic(1,111,79);
+        BorrarPouAsesino(1,111,79);
     }
     else if(PERSONAJE == KRATOS){
-        BorrarSonic(126,111,79);
-        strcpy(personaje, "pou");
-        MostrarPouAsesino(126,111,79);
+        BorrarSonic(1,111,79);
+        MostrarPouAsesino(1,111,79);
     }
 }  
