@@ -68,7 +68,6 @@ void RutAtencionTeclado (){
 void RutAtencionTempo()
 {
 	static int tick=0;
-	static int seg=0;
 	static int tickAnimaciones1 = 0;
 	static int tickAnimaciones2 = 0;
   //solo usamos el timer para el estado pelea
