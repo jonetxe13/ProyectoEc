@@ -1,4 +1,4 @@
-fondos.o: /home/julenson/ProyectoEc/ProyectoEc/source/fondos.c \
+fondos.o: /home/jonetxe13/ProyectoEc/ProyectoEc/source/fondos.c \
  /opt/devkitpro/libnds/include/nds.h \
  /opt/devkitpro/libnds/include/nds/libversion.h \
  /opt/devkitpro/libnds/include/nds/ndstypes.h \
@@ -59,18 +59,18 @@ fondos.o: /home/julenson/ProyectoEc/ProyectoEc/source/fondos.c \
  /opt/devkitpro/libnds/include/nds/arm9/video.h \
  /opt/devkitpro/libnds/include/nds/arm9/videoGL.h \
  /opt/devkitpro/libnds/include/nds/arm9/nand.h \
- /home/julenson/ProyectoEc/ProyectoEc/include/fondos.h \
- /home/julenson/ProyectoEc/ProyectoEc/include/graficos.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/Puerta.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/Derrota.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/PuertaAbierta.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/Pelea1.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/Pelea2.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/Pelea3.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/Victoria.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/Inicio.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/Seleccion.h \
- /home/julenson/ProyectoEc/ProyectoEc/build/Pausa.h
+ /home/jonetxe13/ProyectoEc/ProyectoEc/include/fondos.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/include/graficos.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Puerta.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Derrota.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/PuertaAbierta.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Pelea1.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Pelea2.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Pelea3.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Victoria.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Inicio.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Seleccion.h \
+ /home/jonetxe13/ProyectoEc/ProyectoEc/build/Pausa.h
 /opt/devkitpro/libnds/include/nds.h:
 /opt/devkitpro/libnds/include/nds/libversion.h:
 /opt/devkitpro/libnds/include/nds/ndstypes.h:
@@ -131,15 +131,15 @@ fondos.o: /home/julenson/ProyectoEc/ProyectoEc/source/fondos.c \
 /opt/devkitpro/libnds/include/nds/arm9/video.h:
 /opt/devkitpro/libnds/include/nds/arm9/videoGL.h:
 /opt/devkitpro/libnds/include/nds/arm9/nand.h:
-/home/julenson/ProyectoEc/ProyectoEc/include/fondos.h:
-/home/julenson/ProyectoEc/ProyectoEc/include/graficos.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/Puerta.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/Derrota.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/PuertaAbierta.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/Pelea1.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/Pelea2.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/Pelea3.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/Victoria.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/Inicio.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/Seleccion.h:
-/home/julenson/ProyectoEc/ProyectoEc/build/Pausa.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/include/fondos.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/include/graficos.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Puerta.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Derrota.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/PuertaAbierta.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Pelea1.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Pelea2.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Pelea3.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Victoria.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Inicio.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Seleccion.h:
+/home/jonetxe13/ProyectoEc/ProyectoEc/build/Pausa.h:

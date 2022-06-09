@@ -4,12 +4,12 @@
 
 #include <nds.h>
 #include <stdio.h>
+#include "stdlib.h"
 #include "definiciones.h"
 #include "juego.h"
 #include "perifericos.h"
 #include "fondos.h"
 #include "sprites.h"
-
 int ESTADO;
 int PERSONAJE;
 int ATAQUES;
@@ -17,10 +17,14 @@ int seg3;
 int player;
 int HP1 = vida;
 int HP2 = vida;
+
 int posx= 50;
 int posy= 155;
 int pos2x= 180;
 int pos2y= 105;
+
+int contar = 0;
+char teclaDanno;
 
 void RutAtencionTeclado (){
 
@@ -31,6 +35,17 @@ void RutAtencionTeclado (){
 		}
 	}
 	else if (ESTADO == PELEA){
+		if(player == 0){
+				int Nataques;	
+				if(TeclaPulsada() == A && contar == 0){
+					contar = 1;
+          teclaDanno = 'a';
+				}
+				else if(TeclaPulsada() == B && contar == 0){
+					contar = 1;
+          teclaDanno = 'b';
+				}
+		}
 	}
 	else if(ESTADO == FIN){
 		player = 0;
@@ -47,85 +62,69 @@ void RutAtencionTeclado (){
 	}
 }
 
-int contar = 0;
 
 void RutAtencionTempo()
 {
 	static int tick=0;
 	static int seg=0;
-	static int tickAnimaciones = 0;
+	static int tickAnimaciones1 = 0;
 	static int tickAnimaciones2 = 0;
 
 	if (ESTADO==PELEA)
 	{
 		tick++; 
-		tickAnimaciones++;
-		tickAnimaciones2++;
 		//animation for MostrarAtaque in diagonal
-		if(player == 0){
+		if(player == 0 && contar == 1){
+		    tickAnimaciones1++;
 				int Nataques;	
-				char tecla;
-				if(TeclaPulsada() == A && contar == 0){
-					contar = 1;
-					tickAnimaciones = 0;
-					tecla = 'a';
-				}
-				else if(TeclaPulsada() == B && contar == 0){
-					contar = 1;
-					tickAnimaciones = 0;
-					tecla = 'b';
-				}
-				if(tickAnimaciones < 10 && contar == 1){
+				if(tickAnimaciones1 < 10){
 					MostrarAtaque(12,posx,posy);
 					posx += 14;
 					posy -= 6;
 				}
-				else if(tickAnimaciones >= 10 && contar == 1){
+				else if(tickAnimaciones1 >= 10){
 					BorrarAtaque(12,posx,posy);
-					tickAnimaciones = 0;
+					tickAnimaciones1 = 0;
 					contar = 0;
 					player = 1;
 					posx = 50;
 					posy = 155;
-					if(TeclaPulsada() == A && contar == 0){
+					if(teclaDanno == 'a'){
 						Nataques = rand()%3;
 						HP2 -= 10*Nataques;
 						iprintf("\x1b[13;2HHa atacado %d",Nataques);
 					}
-					else if(TeclaPulsada() == B && contar == 0){
+					else if(teclaDanno == 'b'){
 						HP2 -= 10;
 					}
 				}
 		}
 		else if(player == 1){
-			if(tickAnimaciones == 10){
-					int aleatorio = rand()%2;
-					if(aleatorio == 0){
-						HP1 -= 10; 
-						player = 0;
-						iprintf("\x1b[2J");
-					}else{ 
-						HP1 -= 15; 
-						player = 0;
-						iprintf("\x1b[2J");
-					}
-					tickAnimaciones = 0;
-					contar = 0;
-				}
-				if(tickAnimaciones2 < 10){
-					MostrarAtaque(12,pos2x,pos2y);
-					pos2x -= 16;
-					pos2y += 6;
-				}
-				else if(tickAnimaciones2 >= 10){
-					BorrarAtaque(12,pos2x,pos2y);
-					tickAnimaciones2 = 0;
-					contar = 0;
-					player = 1;
-					pos2x = 180;
-					pos2y = 105;
-					
-				}
+		  tickAnimaciones2++;
+			if(tickAnimaciones2 > 10){
+          int aleatorio = rand()%2;
+          if(aleatorio == 0){
+            HP1 -= 10; 
+            player = 0;
+            iprintf("\x1b[2J");
+          }else{ 
+            HP1 -= 15; 
+            player = 0;
+            iprintf("\x1b[2J");
+          }
+          tickAnimaciones2 = 0;
+			}
+      if(tickAnimaciones2 < 10){
+        MostrarAtaque(12,pos2x,pos2y);
+        pos2x -= 14;
+        pos2y += 6;
+      }
+      else if(tickAnimaciones2 == 10){
+        BorrarAtaque(12,pos2x,pos2y);
+        pos2x = 180;
+        pos2y = 105;
+        
+      }
 		}
 
 		if (tick==5)
