@@ -1,1 +1,0 @@
-Derrota.o: Derrota.s
