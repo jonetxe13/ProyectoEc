@@ -26,31 +26,31 @@ int TeclaPulsada()
 	//ARRIBA=6;ABAJO=7;R=8;L=9;
 	if(TeclaDetectada()) {
 		if(TECLAS_DAT % 2 == 0){
-			tecla = A;
+			tecla= A;
 		}
 		else if(TECLAS_DAT == 1021){
-			tecla = B;
+			tecla= B;
 		}
 		else if(TECLAS_DAT == 1019){
-			tecla = SELECT;
+			tecla= SELECT;
 		}
 		else if(TECLAS_DAT == 1015){
-			tecla = START;
+			tecla= START;
 		}
 		else if(TECLAS_DAT == 1007){
-			tecla = IZQUIERDA;
+			tecla= IZQUIERDA;
 		}
 		else if(TECLAS_DAT == 991){
-			tecla = DERECHA;
+			tecla= DERECHA;
 		}
 		else if(TECLAS_DAT == 959){
-			tecla = ARRIBA;
+			tecla= ARRIBA;
 		}
 		else if(TECLAS_DAT == 895){
-			tecla = ABAJO;
+			tecla= ABAJO;
 		}
 		else if(TECLAS_DAT == 767){
-			tecla = R;
+			tecla= R;
 		}
 		else if(TECLAS_DAT == 511){
 			tecla = L;
@@ -62,7 +62,7 @@ int TeclaPulsada()
 void ConfigurarTeclado(int Conf_Tec)
 {
 	//Configuración del teclado. Modificar su registro de control en base a los bits
-        //activados en el parametro Conf_Tec
+  //activados en el parametro Conf_Tec
 	TECLAS_CNT |= Conf_Tec;
 }
 
