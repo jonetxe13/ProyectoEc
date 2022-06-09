@@ -1,1 +1,0 @@
-FondoGoku.o: FondoGoku.s
