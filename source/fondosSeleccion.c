@@ -11,6 +11,7 @@
 #include "fondos.h"
 
 void fondosSeleccion(){
+    //pone los sprites en el centro de la pantalla en el estado seleccion
     if(PERSONAJE == SONIC){
         BorrarPouAsesino(1,111,79);
         MostrarSonic(1,111,79);

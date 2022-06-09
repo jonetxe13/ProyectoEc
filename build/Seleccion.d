@@ -1,0 +1,1 @@
+Seleccion.o: Seleccion.s

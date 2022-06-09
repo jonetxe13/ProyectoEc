@@ -12,6 +12,8 @@
 #include "EstadoSeleccion.h"
 
 void FondoPelea(int Mapa){
+    //mapa esta en juego, y es 0, 1 o 2 elegido al azar
+    //dependiendo del valor se muestra un fondo u otro aleatoriamente
     if(Mapa == 0){
         visualizarPelea1();
     }

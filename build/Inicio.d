@@ -1,0 +1,1 @@
+Inicio.o: Inicio.s
